@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="porfStyle.css">
+    <title>Junkenstein's Revenge</title>
+    <link rel="stylesheet" href="OWStyle.css">
 </head>
 <body>
     <header>
@@ -16,41 +16,228 @@
             <a href="JunkenEndlessMadness.html">Junkenstein's Revenge</a>
         </nav>
     </header>
-    
+
     <script src="script.js"></script>
 
-    <section id="about-me">
-        <h2>About Me</h2>
+    <section id="Junkenstein's Revenge">
+        <h2>Junkenstein's Revenge</h2>
         <p>
-          Hi, I’m Jeffrey — a Computer Science bachelor from the University of Birmingham with a strong passion for game development.
-          I’ve always been fascinated by how games can blend logic, creativity, and design to create meaningful and entertaining experiences.
+            Junkenstein's Revenge is a classic 4 player co-op event only available during Halloween in Overwatch. 
+            The objective is to prevent the gate being destroyed by waves of enemies and bosses through playing as certain heroes.
+            The gamemode has two different modes, a story mode and an endless mode.
         </p>
-        <p>
-          My primary focus is building games from the ground up — designing mechanics, scripting systems, and creating interactive content.
-          I have worked on buidling a custom game mode in the Overwatch Workshop, where I can push creative boundaries and explore new gameplay ideas.
-        </p>
-        <p>
-          I’m continually learning and refining my skills, and I’m excited to contribute to projects that challenge and inspire me.
-        </p>
-      </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects">
-            <a href="JunkenEndlessMadness.html" target="_blank" class="project">
-                <h3>
-                    <img src="overwatch-icon-png-2.jpg" atl="OW Icon" style="width:40px; height:40px; vertical-align:middle; margin-right:8px;">
-                    Junkenstein's Revenge Endless Madness
-                </h3>
-                <p>A classic Overwatch PvE mode with a twist. Adding Money, Stats, Special waves and Super Ultimate to the base game.</p>
-            </a>
+        <div class="video-grid">
+            <figure>
+                <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/ajMYSSQdHho?start=1"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+                </iframe>
+                <figcaption>A 360° Panorama of the map by <i>Overwatch 360°</i></figcaption>
+            </figure>
+            <figure>
+                <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/VG_IdSDi_fQ"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+                </iframe>
+                <figcaption>A playthrough in Legendary difficulty by <i>VIK7ORIO</i></figcaption>
+            </figure>
         </div>
     </section>
 
-    <footer>   
-        <p>Email: jjgundam315@gmail.com</p>        
-        <p>© 2025 Chi Kiu Jeffrey Wong</p>
-    </footer>
+    <section id="Endless Madness">
+        <h2>Endless Madness</h2>
+        <p>
+            <strong>Endless Madness</strong> is a custom gamemode built on Overwatch's Endless mode, set to Legendary difficulty. All heroes will be playable in this gamemode. 
+            Players will face a total of <strong>12 normal waves</strong> followed by <strong>16 bonus waves</strong>. 
+            The mode introduces several new mechanics to enrich the experience, including a <strong>money and shop system</strong>, 
+            customizable <strong>hero stats</strong>, <strong>special wave events</strong>, and the powerful <strong>Super Ultimate</strong> abilities.
+        </p>
 
+        <section id="creative-process">
+            <h2>Creative Process</h2>
+            <p>
+              <strong>Endless Madness</strong> began in 2020, shortly after Junkenstein's Revenge became available in the Overwatch Workshop. 
+              While some gameplay elements were inspired by other Workshop modes, the core idea was to design a fun, replayable experience that me and my friends could enjoy together during Halloween.
+            </p>
+            <p>
+              What started as a casual side project quickly evolved into a yearly tradition. 
+              As I continued to develop and refine the gamemode, I added new mechanics, adjusted the balance, and introduced original features to make the experience more engaging.
+            </p>
+            <p>
+              With the launch of Overwatch 2 and the arrival of new heroes, I introduced the <strong>Super Ultimate</strong> system in 2023, expanding the strategic depth of the gamemode. 
+              Additional ultimates and enhancements followed in 2024, building on player feedback and creative experimentation.
+            </p>
+        </section>
+          
+
+        <section>
+            <h3>Money System Overview</h3>
+            <p>
+                Inspired by a community game, this core feature of Endless Madness is the use of <strong>money</strong> as a gameplay resource. Players earn money throughout 
+                the match and can spend it to <strong>upgrade their hero's stats</strong>, <strong>purchase game-changing abilities</strong>, 
+                and unlock unique <strong>Super Ultimate</strong> powers.
+            </p>
+
+            <h4>How to Earn Money</h4>
+            <ul>
+                <li>
+                <strong>Blue Circle (near the gate):</strong> Standing in this circle grants periodic income. This blue circle will occur at the front of the gate.
+                </li>
+                <li>
+                <strong>Passive Income Zones (Green Circles):</strong> Passive income is granted over time and can be increased by 
+                standing inside green circles placed around the map. Two appear at the start of the game at the corners next to the gate, and a third green circle is 
+                introduced after the normal wave phase ends, appearing in the middle of the map.
+                </li>
+                <li>
+                <strong>Blood Stone (Red Circle):</strong> A high-risk, high-reward mechanic. Players can stand in the red circle to 
+                sacrifice their own health in exchange for a large sum of money. This area appears only after the normal waves are completed. It will appear at the hay next to the third green circle.
+                </li>
+                <li>
+                <strong>Boss Kills:</strong> Defeating bosses also grants bonus money, encouraging players to focus fire and complete 
+                waves efficiently.
+                </li>
+            </ul>
+
+            <h4>How to Spend Money (Shop)</h4>
+            <p>
+                Players can access the in-game <strong>shop</strong> to enhance their performance and customize their playstyle. Available upgrades include:
+            </p>
+            <ul>
+                <li><strong>Health</strong> – Increases your overall survivability.</li>
+                <li><strong>Healing per second</strong> – Boosts health regeneration over time.</li>
+                <li><strong>Healing received/dealt</strong> – Enhances incoming and outgoing healing effects.</li>
+                <li><strong>Damage received/dealt</strong> – Adjusts damage intake and output for better combat performance.</li>
+                <li><strong>Projectile speed</strong> – Improves hit accuracy and reaction time.</li>
+                <li><strong>Movement speed</strong> – Increases mobility for dodging or repositioning.</li>
+                <li><strong>Objective multiplier</strong> – Amplifies income generation from standing in circles around the map.</li>
+            </ul>
+            <p>
+                The shop also unlocks powerful <strong>abilities</strong> as the game progresses, including unique options like 
+                <em>Lifesteal, Flying, and Super Ultimate</em> abilities. These additions allow for deep strategic builds and 
+                player-specific customizations.
+            </p>
+        </section>
+
+        <section>
+            <h3>Waves and Bosses</h3>
+            <p>
+                Endless Madness maintains the core wave structure of the original mode but introduces dynamically scaling bosses. 
+                All non-boss enemies function as they do in the base game, ensuring familiar mechanics. However, 
+                <strong>boss enemies are scaled based on the current wave</strong>, increasing in difficulty, health, and damage output 
+                as the game progresses.
+            </p>
+        </section>
+
+        <section>
+            <h3>Junkenstein’s Summons</h3>
+            <p>
+              Beginning at wave 16 — the fourth bonus wave — and recurring every two waves, Junkenstein introduces a new mechanic: 
+              <strong>Summons of the Gods</strong>. In these waves, he calls upon powerful deities such as Ifrit, Odin, Shiva, and others to unleash devastating abilities on the battlefield. 
+              Each god applies unique effects such as stuns, area-of-effect (AOE) damage, crowd control, or even instant-kill attacks.
+            </p>
+            <p>
+              To nullify these effects, players must defeat the bosses associated with the wave. Once the wave is cleared, players unlock access to that god’s power in the shop as a permanent upgrade or ability.
+            </p>
+          
+            <div class="mechanic-spotlight">
+              <div class="card">
+                <h4>Ifrit</h4>
+                <p>Unleashes fiery AOE damage at the front gate. Defeat the wave to unlock immunity to burning effects.</p>
+              </div>
+              <div class="card">
+                <h4>Shiva</h4>
+                <p>Randomly freezes a player every 5 seconds. Defeat the wave to gain immunity to freeze effects.</p>
+              </div>
+              <div class="card">
+                <h4>Ramuh</h4>
+                <p>Strikes the Blood Stone with a stunning AOE attack. Defeat the wave to unlock stun immunity.</p>
+              </div>
+              <div class="card">
+                <h4>Leviathan</h4>
+                <p>Summons three tidal waves that knock players back. Defeat the wave to unlock a summonable clone that refreshes every 120 seconds.</p>
+              </div>
+              <div class="card">
+                <h4>Odin</h4>
+                <p>Deals instant-kill AOE strikes at the front gate. Defeat the wave to unlock a damaging orb that continuously deals damage over time.</p>
+              </div>
+              <div class="card">
+                <h4>Bahamut</h4>
+                <p>Unleashes a full-map AOE that reduces all players’ health to 1% and knocks them down. Defeat the wave to unlock <strong>Gigaflare</strong> — a powerful orb that deals massive directional damage based on the player's damage stat.</p>
+              </div>
+            </div>
+          </section>
+          
+          
+
+        <section>
+            <h3>Super Ultimate</h3>
+            <p>
+                The <strong>Super Ultimate</strong> was creat
+                ed to enhance overall playgame dynamic and it is a powerful ultimate that strengthens the original. 
+                Every Super Ultimate is uniquely designed and influenced by either the creator’s favorite <strong>anime</strong> and 
+                <strong>video game</strong> inspirations, or Overwatch's lore and heroes' ultimate. From flashy multi-stage attacks to transformation sequences, these abilities 
+                bring a layer of personal flair and creative storytelling to each hero, making their peak moments feel <em></em>truly memorable.
+            </p>
+            <div class="video-grid">
+                <figure>
+                    <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/SXUl7B-FQMA"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                    </iframe>
+                    <figcaption>A Reinhardt Chu Chu Train rallies along with Brigitte</i></figcaption>
+                </figure>
+                <figure>
+                    <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/pO9bEEsZ43o"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                    </iframe>
+                    <figcaption>DIE DIE DIE so let's get 3 reapers using the ultimate</figcaption>
+                </figure>
+                <figure>
+                    <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/oliRt6LiqOM"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                    </iframe>
+                    <figcaption>Reference from <i>That Time I Got Reincarnated as a Slime</i></figcaption>
+                </figure>
+                <figure>
+                    <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/12fjdprDap8"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                    </iframe>
+                    <figcaption>Reference from <i>Ganyu's</i> Elemental Burst in <i>Genshin Impact</i></figcaption>
+                </figure>
+            </div>
+        </section>
+    </section>
+
+    <section>
+        <h2>GitHub</h2>
+        <p>You can check the source code <a href="https://github.com/Chickylette/JunkenEndlessMadness" target="_blank">here</a>.</p>
+      </section>      
 </body>
+
+<footer>   
+    <p>Email: jjgundam315@gmail.com</p>        
+    <p>© 2025 Chi Kiu Jeffrey Wong</p>
+</footer>
+
 </html>
