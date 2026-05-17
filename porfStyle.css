@@ -37,6 +37,8 @@ header {
   border: none;
   color: white;
   cursor: pointer;
+  position: relative;
+  z-index: 2000;
 }
 
 /* Side Menu */
@@ -55,6 +57,7 @@ header {
   z-index: 1000;
 
   box-shadow: 2px 0 8px rgba(0,0,0,0.4);
+  z-index: 1500;
 }
 
 /* Open Side Menu */
