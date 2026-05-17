@@ -23,10 +23,47 @@ header {
   border-radius: 8px;
 }
 
-.menu-toggle {
-  font-size: 26px;
-  cursor: pointer;
-  color: #ffa726;
+/* Menu Button */
+.menu-button {
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+
+    margin-right: 20px;
+}
+
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -220px;
+
+    width: 220px;
+    height: 100%;
+
+    background-color: #222;
+
+    padding-top: 70px;
+
+    transition: left 0.3s ease;
+}
+
+.side-menu.open {
+    left: 0;
+}
+
+.side-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+
+    padding: 15px 25px;
+}
+
+.side-menu a:hover {
+    background-color: #444;
 }
 
 nav {
