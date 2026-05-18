@@ -1,13 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-    // Load menu.html into container
     fetch("./Menu.html")
         .then(response => response.text())
         .then(data => {
-
             document.getElementById("menuContainer").innerHTML = data;
 
-            // Menu functionality AFTER loading
             const sideMenu = document.getElementById("sideMenu");
             const menuButton = document.getElementById("menuButton");
 
@@ -21,10 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             document.addEventListener("click", function () {
-
-                if (sideMenu.classList.contains("open")) {
-                    sideMenu.classList.remove("open");
-                }
+                sideMenu.classList.remove("open");
             });
-        });
+        })
+        .catch(error => console.error("Menu failed to load:", error));
 });
