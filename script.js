@@ -1,31 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Get elements
-    const sideMenu = document.getElementById("sideMenu");
-    const menuButton = document.getElementById("menuButton");
+    // Load menu.html into container
+    fetch("menu.html")
+        .then(response => response.text())
+        .then(data => {
 
-    // Open / Close menu when button is clicked
-    menuButton.addEventListener("click", function (event) {
+            document.getElementById("menuContainer").innerHTML = data;
 
-        // Prevent click from immediately closing menu
-        event.stopPropagation();
+            // Menu functionality AFTER loading
+            const sideMenu = document.getElementById("sideMenu");
+            const menuButton = document.getElementById("menuButton");
 
-        // Toggle menu
-        sideMenu.classList.toggle("open");
-    });
+            menuButton.addEventListener("click", function (event) {
+                event.stopPropagation();
+                sideMenu.classList.toggle("open");
+            });
 
-    // Prevent menu clicks from closing menu
-    sideMenu.addEventListener("click", function (event) {
-        event.stopPropagation();
-    });
+            sideMenu.addEventListener("click", function (event) {
+                event.stopPropagation();
+            });
 
-    // Close menu when clicking anywhere outside
-    document.addEventListener("click", function () {
+            document.addEventListener("click", function () {
 
-        // Close menu only if open
-        if (sideMenu.classList.contains("open")) {
-            sideMenu.classList.remove("open");
-        }
-    });
-
+                if (sideMenu.classList.contains("open")) {
+                    sideMenu.classList.remove("open");
+                }
+            });
+        });
 });
