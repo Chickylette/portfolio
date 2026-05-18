@@ -13,14 +13,16 @@ body {
 
 /* Header */
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 20px;
+  right: 20px;
   z-index: 3000;
 
   background-color: #111;
   color: #fff;
-  padding: 15px 20px;
 
+  padding: 15px 20px;
   display: flex;
   align-items: center;
   gap: 20px;
