@@ -21,4 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         })
         .catch(error => console.error("Menu failed to load:", error));
+
+    fetch("./Footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footerContainer").innerHTML = data;
+        })
+        .catch(error => console.error("Footer failed to load:", error));
 });
