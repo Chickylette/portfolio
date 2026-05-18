@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     // Load menu.html into container
-    fetch("menu.html")
+    fetch("Menu.html")
         .then(response => response.text())
         .then(data => {
 
