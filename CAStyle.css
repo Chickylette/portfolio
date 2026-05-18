@@ -103,6 +103,27 @@ p {
   border-radius: 8px;
 }
 
+#patch-notes summary {
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.patch-list {
+  margin-left: 25px;
+}
+
+.patch-list ul {
+  margin-left: 30px;
+  margin-top: 8px;
+}
+
+.patch-list li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
 @media (max-width: 768px) {
   .attacks-spotlight {
     grid-template-columns: 1fr;
