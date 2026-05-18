@@ -80,14 +80,14 @@ p {
 }
 
 /* Mechanic Spotlight Styling */
-.mechanic-spotlight {
+.attacks-spotlight {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin-top: 20px;
 }
 
-.mechanic-spotlight .card {
+.attacks-spotlight .card {
   background-color: #fefefe;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -96,12 +96,12 @@ p {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-.mechanic-spotlight .card h4 {
+.attacks-spotlight .card h4 {
   margin-bottom: 10px;
   color: #333;
 }
 
-.mechanic-spotlight .card p {
+.attacks-spotlight .card p {
   font-size: 14px;
   color: #555;
 }
