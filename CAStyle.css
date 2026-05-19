@@ -47,6 +47,24 @@ p {
   margin-bottom: 15px;
 }
 
+#showreel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 20px;
+}
+
+#showreel iframe {
+  width: 100%;
+  max-width: 1000px;
+
+  height: 560px;
+
+  border: none;
+  border-radius: 10px;
+}
+
 .projects {
   display: flex;
   flex-wrap: wrap;
