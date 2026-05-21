@@ -56,3 +56,36 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(error => console.error("Footer failed to load:", error));
 
 });
+
+/* =========================
+   IMAGE GALLERY MODAL
+========================= */
+
+const galleryImages = document.querySelectorAll(".gallery-grid img");
+
+const imageModal = document.getElementById("imageModal");
+const modalImage = document.getElementById("modalImage");
+const closeModal = document.getElementById("closeModal");
+
+galleryImages.forEach(function (image) {
+
+    image.addEventListener("click", function () {
+
+        modalImage.src = image.src;
+
+        imageModal.classList.add("open");
+    });
+});
+
+closeModal.addEventListener("click", function () {
+
+    imageModal.classList.remove("open");
+});
+
+imageModal.addEventListener("click", function (event) {
+
+    if (event.target === imageModal) {
+
+        imageModal.classList.remove("open");
+    }
+});

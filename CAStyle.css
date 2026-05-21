@@ -148,6 +148,8 @@ p {
 
   border-radius: 10px;
 
+  cursor: pointer;
+
   transition: transform 0.3s ease,
               box-shadow 0.3s ease;
 }
@@ -156,6 +158,44 @@ p {
   transform: scale(1.03);
 
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Fullscreen Modal */
+.image-modal {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  background-color: rgba(0, 0, 0, 0.9);
+
+  z-index: 5000;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.image-modal.open {
+  display: flex;
+}
+
+.image-modal img {
+  max-width: 90%;
+  max-height: 90%;
+
+  border-radius: 10px;
+}
+
+.close-modal {
+  position: absolute;
+
+  top: 20px;
+  right: 35px;
+
+  color: white;
+
+  font-size: 45px;
+  cursor: pointer;
 }
 
 #patch-notes summary {
