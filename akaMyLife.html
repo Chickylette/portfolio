@@ -50,43 +50,40 @@
         
         <section id="mechanics">
             <h3>Mechanics</h3>
-            <p> 
-                <div class="equation">
-                    $$
-                    p(n) =
-                    \begin{cases}
-                        p_0, & n < N_0 \\[6pt]
-                        \min(1, p_0 \cdot g^{n-N_0}),
-                            & N_0 \leq n < N_{\max} \\[6pt]
-                        1, & n = N_{\max}
-                    \end{cases}
-                    $$
-                </div>
-                <p>Where:</p>
-                <ul>
-                    <li>
-                        $p_0$ = base probability per pull at the start
-                        (e.g. 0.012 for 1.2%)
-                    </li>
-
-                    <li>
-                        $N_0$ = pull where soft pity starts
-                        (before this, the probability remains at $p_0$)
-                    </li>
-
-                    <li>
-                        $g > 1$ = exponential growth factor per pull after soft pity
-                    </li>
-
-                    <li>
-                        $N_{\max}$ = hard pity pull, where $p = 1$
-                    </li>
-                </ul>
-            </p>
             <section id="gacha">
                 <h3>Gacha</h3>
                 <p>
-                    
+                    <div class="equation">
+                        $$
+                        p(n) =
+                        \begin{cases}
+                            p_0, & n < N_0 \\[6pt]
+                            \min(1, p_0 \cdot g^{n-N_0}),
+                                & N_0 \leq n < N_{\max} \\[6pt]
+                            1, & n = N_{\max}
+                        \end{cases}
+                        $$
+                    </div>
+                    <p>Where:</p>
+                    <ul>
+                        <li>
+                            $p_0$ = base probability per pull at the start
+                            (e.g. 0.012 for 1.2%)
+                        </li>
+
+                        <li>
+                            $N_0$ = pull where soft pity starts
+                            (before this, the probability remains at $p_0$)
+                        </li>
+
+                        <li>
+                            $g > 1$ = exponential growth factor per pull after soft pity
+                        </li>
+
+                        <li>
+                            $N_{\max}$ = hard pity pull, where $p = 1$
+                        </li>
+                    </ul>        
                 </p>
             </section>
             <section id="work">
