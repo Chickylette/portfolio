@@ -219,6 +219,21 @@ p {
   line-height: 1.5;
 }
 
+.equation {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 1.15rem;
+    overflow-x: auto;
+}
+
+#exponential-model ul {
+    line-height: 1.8;
+}
+
+#exponential-model li {
+    margin-bottom: 8px;
+}
+
 @media (max-width: 768px) {
   .attacks-spotlight {
     grid-template-columns: 1fr;

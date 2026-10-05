@@ -6,6 +6,19 @@
     <title>akaMyLife</title>
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="akaMyLifeStyle.css">
+    <script>
+        MathJax = {
+            text: {
+                inlineMath: [['$','$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script
+        id="MathJax-script"
+        async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
 </head>
 <body>
     <div id="menuContainer"></div>  
@@ -29,16 +42,56 @@
         <section id="backstory">
             <h3>Backstory</h3>
             <p>
-                You are a fresh graduate that moved into a city named NHK, a city that people are obessed with gacha and virtual idols.
-                You are preparing your very first day of work in PITA. The first day of working life thus begins. 
+                You are a fresh graduate who has recently moved to NHK, a city where people are obsessed with gacha and virtual idols.
+                As you prepare for your very first day at PITA, a new chapter of your life is about to begin. Work, earn money, try your luck with gacha, and immerse yourself in the world of virtual idols.
+                Your working life starts here.
             </p>
         </section>
         
         <section id="mechanics">
             <h3>Mechanics</h3>
             <p> 
-                
+                <div class="equation">
+                    $$
+                    p(n) =
+                    \begin{cases}
+                        p_0, & n < N_0 \\[6pt]
+                        \min(1, p_0 \cdot g^{n-N_0}),
+                            & N_0 \leq n < N_{\max} \\[6pt]
+                        1, & n = N_{\max}
+                    \end{cases}
+                    $$
+                </div>
+                <p>Where:</p>
+                <ul>
+                    <li>
+                        $p_0$ = base probability per pull at the start
+                        (e.g. 0.012 for 1.2%)
+                    </li>
+
+                    <li>
+                        $N_0$ = pull where soft pity starts
+                        (before this, the probability remains at $p_0$)
+                    </li>
+
+                    <li>
+                        $g > 1$ = exponential growth factor per pull after soft pity
+                    </li>
+
+                    <li>
+                        $N_{\max}$ = hard pity pull, where $p = 1$
+                    </li>
+                </ul>
             </p>
+            <section id="gacha">
+                <h3>Gacha</h3>
+                <p>
+                    
+                </p>
+            </section>
+            <section id="work">
+                <h3>Work</h3>
+            </section>
         </section>
     </section>
 </body>
