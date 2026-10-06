@@ -44,50 +44,75 @@
             <h3>Backstory</h3>
             <p>
                 You are a fresh graduate who has recently moved to NHK, a city where people are obsessed with gacha and virtual idols.
-                As you prepare for your very first day at PITA, a new chapter of your life is about to begin. Work, earn money, try your luck with gacha, and immerse yourself in the world of virtual idols.
-                Your working life starts here.
+                As you prepare for your very first day at PITA, a new chapter of your life is about to begin. Work, earn money, try your luck with gacha, 
+                and immerse yourself in the world of virtual idols. Your working life starts here.
             </p>
         </section>
         
         <section id="mechanics">
             <h3>Mechanics</h3>
+
             <section id="gacha">
                 <h3>Gacha</h3>
+
                 <p>
-                    As one of the core mechanic in this game, the gacha system is designed to mimc modern gacha systems and recr
-                    <div class="equation">
-                        $$
-                        p(n) =
-                        \begin{cases}
-                            p_0, & n < N_0 \\[6pt]
-                            \min(1, p_0 \cdot g^{n-N_0}),
-                                & N_0 \leq n < N_{\max} \\[6pt]
-                            1, & n = N_{\max}
-                        \end{cases}
-                        $$
-                    </div>
-                    <p>Where:</p>
-                    <ul>
-                        <li>
-                            $p_0$ = base probability per pull at the start
-                            (e.g. 0.012 for 1.2%)
-                        </li>
+                    As one of the core mechanics of the game, the gacha system is designed
+                    to recreate the tension and excitement found in modern gacha games.
+                    Rather than relying entirely on a fixed probability, the system gradually
+                    increases the player's chance of obtaining a character as more pulls are made.
+                </p>
 
-                        <li>
-                            $N_0$ = pull where soft pity starts
-                            (before this, the probability remains at $p_0$)
-                        </li>
+                <p>
+                    The gacha model uses a power curve to control this probability.
+                    The system is balanced so that a character is obtained at around
+                    80–100 pulls on average, while the maximum number of pulls is capped
+                    at 150. This ensures that unlucky players are still guaranteed a character
+                    after reaching the maximum number of pulls.
+                </p>
 
-                        <li>
-                            $g > 1$ = exponential growth factor per pull after soft pity
-                        </li>
+                <div class="equation">
+                    $$
+                    P(n) =
+                    \min\left(
+                        1,\;
+                        P_1 + (1-P_1)
+                        \left(\frac{n-1}{149}\right)^\beta
+                    \right)
+                    $$
+                </div>
 
-                        <li>
-                            $N_{\max}$ = hard pity pull, where $p = 1$
-                        </li>
-                    </ul>        
+                <p>Where:</p>
+
+                <ul>
+                    <li>
+                        $P(n)$ = probability of obtaining a character on pull $n$
+                    </li>
+
+                    <li>
+                        $P_1$ = base probability of obtaining a character
+                    </li>
+
+                    <li>
+                        $n$ = current number of pulls
+                    </li>
+
+                    <li>
+                        $\beta$ = controls how late and how sharply the probability increases
+                    </li>
+
+                    <li>
+                        $150$ = maximum number of pulls before a character is guaranteed
+                    </li>
+                </ul>
+
+                <p>
+                    This approach keeps the early pulls unpredictable while making each
+                    later pull increasingly rewarding. It allows the system to maintain
+                    the excitement of chance while preventing long periods of bad luck
+                    from becoming overly frustrating.
                 </p>
             </section>
+        </section>
             <section id="work">
                 <h3>Work</h3>
             </section>
