@@ -54,106 +54,110 @@
             <section id="gacha">
                 <h3>Gacha System</h3>
 
-                <h3>Design Philosophy</h3>
+                <section id="gacha-design-philosophy">
+                    <h3>Design Philosophy</h3>
 
-                <p>
-                    As one of the core mechanics of the game, the gacha system was designed
-                    to recreate the tension and excitement of modern gacha games while
-                    preventing long periods of bad luck from becoming overly frustrating.
-                </p>
-
-                <p>
-                    Early pulls are intentionally unpredictable, with characters having a
-                    relatively low chance of appearing. As the player continues to pull,
-                    the probability gradually increases through a pity system. This creates
-                    a sense of growing anticipation while ensuring that every unsuccessful
-                    pull still brings the player closer to a guaranteed reward.
-                </p>
-
-
-                <h3>Probability Model</h3>
-
-                <p>
-                    Instead of using a fixed drop rate, I designed a power curve that
-                    increases the probability of obtaining a character as the player's
-                    pity count rises. The curve was adjusted through repeated simulations
-                    and data analysis, with the goal of placing the typical character
-                    acquisition point at approximately 80–100 pulls while maintaining
-                    a hard guarantee at 150 pulls.
-                </p>
-
-                <div class="data">
-                    <img src="images/akaimage1.png"
-                        alt="Graph showing the probability of obtaining a character as pity increases">
-
-                    <p class="caption">
-                        Character probability increases progressively with pity,
-                        eventually reaching a 100% guarantee at 150 pulls.
+                    <p>
+                        As one of the core mechanics of the game, the gacha system was designed
+                        to recreate the tension and excitement of modern gacha games while
+                        preventing long periods of bad luck from becoming overly frustrating.
                     </p>
-                </div>
 
-
-                <h3>Featured Character System</h3>
-
-                <p>
-                    Obtaining a high-rarity character does not always guarantee the featured
-                    character. The system therefore includes an additional featured-character
-                    mechanic. Failing to obtain the featured character increases the player's
-                    chance of receiving it during subsequent pulls, eventually leading to a
-                    guaranteed featured reward.
-                </p>
-
-                <div class="data">
-                    <img src="images/akaimage4.png"
-                        alt="Graph showing the probability of obtaining the featured character">
-
-                    <p class="caption">
-                        The featured-character probability increases after an unsuccessful
-                        result, reducing the impact of repeated bad luck.
+                    <p>
+                        Early pulls are intentionally unpredictable, with characters having a
+                        relatively low chance of appearing. As the player continues to pull,
+                        the probability gradually increases through a pity system. This creates
+                        a sense of growing anticipation while ensuring that every unsuccessful
+                        pull still brings the player closer to a guaranteed reward.
                     </p>
-                </div>
+                </section>
 
+                <section id="probability-model">
+                    <h3>Probability Model</h3>
 
-                <h3>Simulation & Balancing</h3>
+                    <p>
+                        Instead of using a fixed drop rate, I designed a power curve that
+                        increases the probability of obtaining a character as the player's
+                        pity count rises. The curve was adjusted through repeated simulations
+                        and data analysis, with the goal of placing the typical character
+                        acquisition point at approximately 80–100 pulls while maintaining
+                        a hard guarantee at 150 pulls.
+                    </p>
 
-                <p>
-                    To evaluate the system beyond individual pulls, I ran large-scale
-                    simulations and recorded the number of pulls required to obtain featured
-                    characters. This allowed me to examine both the expected outcome and
-                    unusually lucky or unlucky cases before adjusting the probability model.
-                </p>
-
-                <div class="data-grid">
-                    <div class="data-item">
-                        <img src="images/akaimage2.png"
-                            alt="Distribution of pulls required to obtain one featured character">
-
-                        <p class="caption">
-                            Distribution of pulls required to obtain one featured character.
-                        </p>
-                    </div>
-
-                    <div class="data-item">
-                        <img src="images/akaimage5.png"
-                            alt="Distribution of pulls required to obtain six featured characters">
+                    <div class="data">
+                        <img src="images/akaimage1.png"
+                            alt="Graph showing the probability of obtaining a character as pity increases">
 
                         <p class="caption">
-                            Across multiple acquisitions, results begin to concentrate
-                            around the intended average.
+                            Character probability increases progressively with pity,
+                            eventually reaching a 100% guarantee at 150 pulls.
                         </p>
                     </div>
+                </section>
 
-                    <div class="data-item">
-                        <img src="images/akaimage3.png"
-                            alt="Distribution of pulls required to obtain ten featured characters">
+                <section id="feature-character-system">
+                    <h3>Featured Character System</h3>
+
+                    <p>
+                        Obtaining a high-rarity character does not always guarantee the featured
+                        character. The system therefore includes an additional featured-character
+                        mechanic. Failing to obtain the featured character increases the player's
+                        chance of receiving it during subsequent pulls, eventually leading to a
+                        guaranteed featured reward.
+                    </p>
+
+                    <div class="data">
+                        <img src="images/akaimage4.png"
+                            alt="Graph showing the probability of obtaining the featured character">
 
                         <p class="caption">
-                            The ten-character simulation demonstrates the long-term
-                            consistency of the probability model.
+                            The featured-character probability increases after an unsuccessful
+                            result, reducing the impact of repeated bad luck.
                         </p>
                     </div>
-                </div>
+                </section>
 
+                <section id="simluation-balancing">
+                    <h3>Simulation & Balancing</h3>
+
+                    <p>
+                        To evaluate the system beyond individual pulls, I ran large-scale
+                        simulations and recorded the number of pulls required to obtain featured
+                        characters. This allowed me to examine both the expected outcome and
+                        unusually lucky or unlucky cases before adjusting the probability model.
+                    </p>
+
+                    <div class="data-grid">
+                        <div class="data-item">
+                            <img src="images/akaimage2.png"
+                                alt="Distribution of pulls required to obtain one featured character">
+
+                            <p class="caption">
+                                Distribution of pulls required to obtain one featured character.
+                            </p>
+                        </div>
+
+                        <div class="data-item">
+                            <img src="images/akaimage5.png"
+                                alt="Distribution of pulls required to obtain six featured characters">
+
+                            <p class="caption">
+                                Across multiple acquisitions, results begin to concentrate
+                                around the intended average.
+                            </p>
+                        </div>
+
+                        <div class="data-item">
+                            <img src="images/akaimage3.png"
+                                alt="Distribution of pulls required to obtain ten featured characters">
+
+                            <p class="caption">
+                                The ten-character simulation demonstrates the long-term
+                                consistency of the probability model.
+                            </p>
+                        </div>
+                    </div>
+                </section>
 
                 <h3>Design Outcome</h3>
 
