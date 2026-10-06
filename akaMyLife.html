@@ -51,69 +51,133 @@
         
         <section id="mechanics">
             <h3>Mechanics</h3>
-
             <section id="gacha">
-                <h3>Gacha</h3>
+                <h3>Gacha System</h3>
+
+                <h4>Design Philosophy</h4>
 
                 <p>
-                    As one of the core mechanics of the game, the gacha system is designed
-                    to recreate the tension and excitement found in modern gacha games.
-                    Rather than relying entirely on a fixed probability, the system gradually
-                    increases the player's chance of obtaining a character as more pulls are made.
+                    As one of the core mechanics of the game, the gacha system was designed
+                    to recreate the tension and excitement of modern gacha games while
+                    preventing long periods of bad luck from becoming overly frustrating.
                 </p>
 
                 <p>
-                    The gacha model uses a power curve to control this probability.
-                    The system is balanced so that a character is obtained at around
-                    80–100 pulls on average, while the maximum number of pulls is capped
-                    at 150. This ensures that unlucky players are still guaranteed a character
-                    after reaching the maximum number of pulls.
+                    Early pulls are intentionally unpredictable, with characters having a
+                    relatively low chance of appearing. As the player continues to pull,
+                    the probability gradually increases through a pity system. This creates
+                    a sense of growing anticipation while ensuring that every unsuccessful
+                    pull still brings the player closer to a guaranteed reward.
                 </p>
 
-                <div class="equation">
-                    $$
-                    P(n) =
-                    \min\left(
-                        1,\;
-                        P_1 + (1-P_1)
-                        \left(\frac{n-1}{149}\right)^\beta
-                    \right)
-                    $$
+
+                <h4>Probability Model</h4>
+
+                <p>
+                    Instead of using a fixed drop rate, I designed a power curve that
+                    increases the probability of obtaining a character as the player's
+                    pity count rises. The curve was adjusted through repeated simulations
+                    and data analysis, with the goal of placing the typical character
+                    acquisition point at approximately 80–100 pulls while maintaining
+                    a hard guarantee at 150 pulls.
+                </p>
+
+                <div class="data">
+                    <img src="images/akaimage1.png"
+                        alt="Graph showing the probability of obtaining a character as pity increases">
+
+                    <p class="caption">
+                        Character probability increases progressively with pity,
+                        eventually reaching a 100% guarantee at 150 pulls.
+                    </p>
                 </div>
 
-                <p>Where:</p>
 
-                <ul>
-                    <li>
-                        $P(n)$ = probability of obtaining a character on pull $n$
-                    </li>
-
-                    <li>
-                        $P_1$ = base probability of obtaining a character
-                    </li>
-
-                    <li>
-                        $n$ = current number of pulls
-                    </li>
-
-                    <li>
-                        $\beta$ = controls how late and how sharply the probability increases
-                    </li>
-
-                    <li>
-                        $150$ = maximum number of pulls before a character is guaranteed
-                    </li>
-                </ul>
+                <h4>Featured Character System</h4>
 
                 <p>
-                    This approach keeps the early pulls unpredictable while making each
-                    later pull increasingly rewarding. It allows the system to maintain
-                    the excitement of chance while preventing long periods of bad luck
-                    from becoming overly frustrating.
+                    Obtaining a high-rarity character does not always guarantee the featured
+                    character. The system therefore includes an additional featured-character
+                    mechanic. Failing to obtain the featured character increases the player's
+                    chance of receiving it during subsequent pulls, eventually leading to a
+                    guaranteed featured reward.
+                </p>
+
+                <div class="data">
+                    <img src="images/akaimage4.png"
+                        alt="Graph showing the probability of obtaining the featured character">
+
+                    <p class="caption">
+                        The featured-character probability increases after an unsuccessful
+                        result, reducing the impact of repeated bad luck.
+                    </p>
+                </div>
+
+
+                <h4>Simulation & Balancing</h4>
+
+                <p>
+                    To evaluate the system beyond individual pulls, I ran large-scale
+                    simulations and recorded the number of pulls required to obtain featured
+                    characters. This allowed me to examine both the expected outcome and
+                    unusually lucky or unlucky cases before adjusting the probability model.
+                </p>
+
+                <div class="data-grid">
+                    <div class="data-item">
+                        <img src="images/akaimage2.png"
+                            alt="Distribution of pulls required to obtain one featured character">
+
+                        <p class="caption">
+                            Distribution of pulls required to obtain one featured character.
+                        </p>
+                    </div>
+
+                    <div class="data-item">
+                        <img src="images/akaimage5.png"
+                            alt="Distribution of pulls required to obtain six featured characters">
+
+                        <p class="caption">
+                            Across multiple acquisitions, results begin to concentrate
+                            around the intended average.
+                        </p>
+                    </div>
+
+                    <div class="data-item">
+                        <img src="images/akaimage3.png"
+                            alt="Distribution of pulls required to obtain ten featured characters">
+
+                        <p class="caption">
+                            The ten-character simulation demonstrates the long-term
+                            consistency of the probability model.
+                        </p>
+                    </div>
+                </div>
+
+
+                <h4>Design Outcome</h4>
+
+                <p>
+                    The final model creates a progression from uncertainty to reliability.
+                    Early pulls preserve the excitement of chance, while the increasing
+                    probability and hard pity progressively reduce the influence of bad luck.
+                    Simulation results showed that character acquisition was concentrated
+                    around the intended range while extreme outcomes became increasingly
+                    uncommon over multiple acquisitions.
+                </p>
+
+                <p>
+                    The system also supports the wider theme of the game. Since the world is
+                    built around a society obsessed with gacha and virtual idols, mechanics
+                    such as pity, featured characters, banner cycles and saving currency are
+                    designed to resemble systems found in commercial gacha games. This makes
+                    the gacha system both a gameplay mechanic and part of the game's
+                    role-playing experience.
                 </p>
             </section>
+
             <section id="work">
-                <h3>Work</h3>
+                <h3>Work</h3>   
             </section>
         </section>
     </section>
