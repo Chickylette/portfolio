@@ -9,6 +9,88 @@
 </head>
 <body>
     <div id="menuContainer"></div>  
+
+    <section id="TFT">
+       <h2>TeamFight on Tiles</h2>
+       <p>
+            TeamFight on Tiles is a hex-grid auto-battler inspired by Teamfight Tactics, 
+            with an additional focus on terrain-based strategy. 
+            While retaining the core concept of positioning units and letting them battle automatically, 
+            the game introduces different tile types, each with its own movement cost.
+        </p>
+
+        <p>
+            These terrain variations influence unit movement and pathfinding, 
+            adding an extra layer of strategy to unit positioning and battlefield navigation. 
+            Players must consider not only their team composition but also how the terrain affects combat.
+       </p>
+
+       <section id="Mechanics">
+            <h3>Mechanics</h3>
+            <section id="hexgrid">
+                <h3>Hex Gird</h3>
+
+                <p>
+                    The game features a 45-tile hexagonal grid arranged across seven rows, with each row containing six to seven tiles. 
+                    The board size was determined through multiple prototypes to provide sufficient space for unit movement and strategic positioning 
+                    without making the battlefield feel too sparse. The grid is divided into different zones, 
+                    with the three rows closest to the player designated for unit placement and the three furthest rows used for enemy spawning. 
+                    This layout creates a clear separation between opposing teams while leaving space for units to navigate and engage in combat.
+                </p>
+            </section>
+
+            <section id="terrain">
+                <h3>Terrain</h3>
+
+                <p>
+                    To introduce additional strategic depth, the grid features four terrain types: Road, Grass, Water, and Mountain, 
+                    each represented by a different colour. These terrain types influence unit movement and pathfinding, 
+                    with certain tiles allowing normal movement while others restrict movement entirely.
+                    Each terrain type has its own movement properties, affecting how units navigate across the battlefield. 
+                    Impassable tiles cannot be traversed.
+                </p>
+
+                <div class="table-container">
+                    <table class="terrain-table">
+                        <thead>
+                            <tr>
+                                <th>Terrain</th>
+                                <th>Colour</th>
+                                <th>Cost</th>
+                                <th>Walkable</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Road</td>
+                                <td><span class="tile-color road"></span> White</td>
+                                <td>0</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td>Grass</td>
+                                <td><span class="tile-color grass"></span> Green</td>
+                                <td>0</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td>Water</td>
+                                <td><span class="tile-color water"></span> Blue</td>
+                                <td>N/A</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td>Mountain</td>
+                                <td><span class="tile-color mountain"></span> Black</td>
+                                <td>N/A</td>
+                                <td>No</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+       </section>
+    </section>
 </body>
 
 <div id="footerContainer"></div>
