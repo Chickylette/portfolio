@@ -27,121 +27,122 @@
             Players must consider not only their team composition but also how the terrain affects combat.
        </p>
 
-       <section id="Mechanics">
-            <h3>Mechanics</h3>
-            <section id="hexgrid">
-                <h3>Hex Gird</h3>
+        <section id="hexgrid">
+            <h3>Hex Gird</h3>
 
-                <p>
-                    The game features a 45-tile hexagonal grid arranged across seven rows, with each row containing six to seven tiles. 
-                    The board size was determined through multiple prototypes to provide sufficient space for unit movement and strategic positioning 
-                    without making the battlefield feel too sparse. The grid is divided into different zones, 
-                    with the three rows closest to the player designated for unit placement and the three furthest rows used for enemy spawning. 
-                    This layout creates a clear separation between opposing teams while leaving space for units to navigate and engage in combat.
-                </p>
-            </section>
+            <p>
+                The game features a 45-tile hexagonal grid arranged across seven rows, with each row containing six to seven tiles. 
+                The board size was determined through multiple prototypes to provide sufficient space for unit movement and strategic positioning 
+                without making the battlefield feel too sparse. The grid is divided into different zones, 
+                with the three rows closest to the player designated for unit placement and the three furthest rows used for enemy spawning. 
+                This layout creates a clear separation between opposing teams while leaving space for units to navigate and engage in combat.
+            </p>
+        </section>
 
-            <section id="terrain">
-                <h3>Terrain</h3>
+        <section id="terrain">
+            <h3>Terrain</h3>
 
-                <p>
-                    To introduce additional strategic depth, the grid features four terrain types: Road, Grass, Water, and Mountain, 
-                    each represented by a different colour. These terrain types influence unit movement and pathfinding, 
-                    with certain tiles allowing normal movement while others restrict movement entirely.
-                    Each terrain type has its own movement properties, affecting how units navigate across the battlefield. 
-                    Impassable tiles cannot be traversed.
-                </p>
+            <p>
+                To introduce additional strategic depth, the grid features four terrain types: Road, Grass, Water, and Mountain, 
+                each represented by a different colour. These terrain types influence unit movement and pathfinding, 
+                with certain tiles allowing normal movement while others restrict movement entirely.
+                Each terrain type has its own movement properties, affecting how units navigate across the battlefield. 
+                Impassable tiles cannot be traversed.
+            </p>
 
-                <div class="table-container">
-                    <table class="terrain-table">
-                        <thead>
-                            <tr>
-                                <th>Terrain</th>
-                                <th>Colour</th>
-                                <th>Cost</th>
-                                <th>Move Speed</th>
-                                <th>Walkable</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Road</td>
-                                <td><span class="tile-color road"></span>White</td>
-                                <td>2</td>
-                                <td>x2</td>
-                                <td>Yes</td>
-                            </tr>
-                            <tr>
-                                <td>Grass</td>
-                                <td><span class="tile-color grass"></span>Green</td>
-                                <td>6</td>
-                                <td>x1</td>
-                                <td>Yes</td>
-                            </tr>
-                            <tr>
-                                <td>Water</td>
-                                <td><span class="tile-color water"></span>Blue</td>
-                                <td>10</td>
-                                <td>0.67</td>
-                                <td>Yes</td>
-                            </tr>
-                            <tr>
-                                <td>Mountain</td>
-                                <td><span class="tile-color mountain"></span>Black</td>
-                                <td>N/A</td>
-                                <td>N/A</td>
-                                <td>No</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="table-container">
+                <table class="terrain-table">
+                    <thead>
+                        <tr>
+                            <th>Terrain</th>
+                            <th>Colour</th>
+                            <th>Cost</th>
+                            <th>Move Speed</th>
+                            <th>Walkable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Road</td>
+                            <td><span class="tile-color road"></span>White</td>
+                            <td>2</td>
+                            <td>x2</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Grass</td>
+                            <td><span class="tile-color grass"></span>Green</td>
+                            <td>6</td>
+                            <td>x1</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Water</td>
+                            <td><span class="tile-color water"></span>Blue</td>
+                            <td>10</td>
+                            <td>x0.67</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Mountain</td>
+                            <td><span class="tile-color mountain"></span>Black</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>No</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="pathfinding">
+            <h3>Pathfinding Behaviour</h3>
+
+            <p>
+                The flowchart below illustrates how units automatically locate, approach, and attack enemies during combat. 
+                Each unit searches for a target and checks whether it is within attack range. 
+                If the target is out of range, the unit uses the A* pathfinding algorithm to calculate a route towards a neighbouring tile of 
+                the target, taking terrain movement costs and obstacles into account.
+            </p>
+                
+            <p>
+                After moving to the next tile, the unit checks its attack range again and recalculates its path if the target has moved. 
+                This process continues until the target is defeated, at which point the unit searches for a new enemy and repeats the cycle.
+            </p>
+            <section id="pathfinding-flowchart">
+                <div class="flowchart-container">
+                    <pre class="mermaid">
+                        flowchart TD
+                            A([Search for Enemy]) --> B[Select Target]
+                            B --> C{Target in Attack Range?}
+
+                            C -->|Yes| D[Attack Target]
+                            C -->|No| E[Calculate A* Path]
+
+                            E --> F[Move to Next Tile]
+                            F --> G{Target in Attack Range?}
+
+                            G -->|Yes| D
+                            G -->|No| H{Target Moved?}
+
+                            H -->|Yes| E
+                            H -->|No| I[Continue Along Path]
+                            I --> F
+                            D --> J{Target Defeated?}
+                            J -->|Yes| A
+                            J -->|No| C
+                    </pre>
                 </div>
             </section>
+        </section>
 
-            <section id="pathfinding">
-                <h3>Pathfinding Behaviour</h3>
+        <section id="astar">
 
-                <p>
-                    The flowchart below illustrates how units automatically locate, approach, and attack enemies during combat. 
-                    Each unit searches for a target and checks whether it is within attack range. 
-                    If the target is out of range, the unit uses the A* pathfinding algorithm to calculate a route towards a neighbouring tile of 
-                    the target, taking terrain movement costs and obstacles into account.
-                </p>
-                
-                <p>
-                    After moving to the next tile, the unit checks its attack range again and recalculates its path if the target has moved. 
-                    This process continues until the target is defeated, at which point the unit searches for a new enemy and repeats the cycle.
-                </p>
-                <section id="pathfinding-flowchart">
-                    <div class="flowchart-container">
-                        <pre class="mermaid">
-                            flowchart TD
-                                A([Search for Enemy]) --> B[Select Target]
-                                B --> C{Target in Attack Range?}
+        </section>
 
-                                C -->|Yes| D[Attack Target]
-                                C -->|No| E[Calculate A* Path]
-
-                                E --> F[Move to Next Tile]
-                                F --> G{Target in Attack Range?}
-
-                                G -->|Yes| D
-                                G -->|No| H{Target Moved?}
-
-                                H -->|Yes| E
-                                H -->|No| I[Continue Along Path]
-                                I --> F
-                                D --> J{Target Defeated?}
-                                J -->|Yes| A
-                                J -->|No| C
-                        </pre>
-                    </div>
-                </section>
-            </section>
-
-            <section id="ai">
-                <h3>Unit AI</h3>
-            </section>
-       </section>
+        <section id="ai">
+            <h3>Unit AI</h3>
+        </section>
     </section>
 </body>
 

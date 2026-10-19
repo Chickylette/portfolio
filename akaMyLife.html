@@ -49,158 +49,155 @@
             </p>
         </section>
         
-        <section id="mechanics">
-            <h3>Mechanics</h3>
-            <section id="gacha">
-                <h3>Gacha System</h3>
+        <section id="gacha">
+            <h3>Gacha System</h3>
 
-                <section id="gacha-design-philosophy">
-                    <h3>Design Philosophy</h3>
+            <section id="gacha-design-philosophy">
+                <h3>Design Philosophy</h3>
 
-                    <p>
-                        As one of the core mechanics of the game, the gacha system was designed
-                        to recreate the tension and excitement of modern gacha games while
-                        preventing long periods of bad luck from becoming overly frustrating.
-                    </p>
-
-                    <p>
-                        Early pulls are intentionally unpredictable, with characters having a
-                        relatively low chance of appearing. As the player continues to pull,
-                        the probability gradually increases through a pity system. This creates
-                        a sense of growing anticipation while ensuring that every unsuccessful
-                        pull still brings the player closer to a guaranteed reward.
-                    </p>
-                </section>
-
-                <section id="probability-model">
-                    <h3>Probability Model</h3>
-
-                    <p>
-                        Instead of using a fixed drop rate, I designed a power curve that
-                        increases the probability of obtaining a character as the player's
-                        pity count rises. The curve was adjusted through repeated simulations
-                        and data analysis, with the goal of placing the typical character
-                        acquisition point at approximately 80–100 pulls while maintaining
-                        a hard guarantee at 150 pulls.
-                    </p>
-
-                    <div class="data">
-                        <img src="images/akaimage1.png"
-                            alt="Graph showing the probability of obtaining a character as pity increases">
-
-                        <p class="caption">
-                            Character probability increases progressively with pity,
-                            eventually reaching a 100% guarantee at 150 pulls.
-                        </p>
-                    </div>
-                </section>
-
-                <section id="feature-character-system">
-                    <h3>Featured Character System</h3>
-
-                    <p>
-                        Obtaining a high-rarity character does not always guarantee the featured
-                        character. The system therefore includes an additional featured-character
-                        mechanic. Failing to obtain the featured character increases the player's
-                        chance of receiving it during subsequent pulls, eventually leading to a
-                        guaranteed featured reward.
-                    </p>
-
-                    <div class="data">
-                        <img src="images/akaimage4.png"
-                            alt="Graph showing the probability of obtaining the featured character">
-
-                        <p class="caption">
-                            The featured-character probability increases after an unsuccessful
-                            result, reducing the impact of repeated bad luck.
-                        </p>
-                    </div>
-                </section>
-
-                <section id="simluation-balancing">
-                    <h3>Simulation & Balancing</h3>
-
-                    <p>
-                        To evaluate the system beyond individual pulls, I ran large-scale
-                        simulations and recorded the number of pulls required to obtain featured
-                        characters. This allowed me to examine both the expected outcome and
-                        unusually lucky or unlucky cases before adjusting the probability model.
-                    </p>
-
-                    <div class="data-grid">
-                        <div class="data-item">
-                            <img src="images/akaimage2.png"
-                                alt="Distribution of pulls required to obtain one featured character">
-
-                            <p class="caption">
-                                Distribution of pulls required to obtain one featured character.
-                            </p>
-                        </div>
-
-                        <div class="data-item">
-                            <img src="images/akaimage5.png"
-                                alt="Distribution of pulls required to obtain six featured characters">
-
-                            <p class="caption">
-                                Across multiple acquisitions, results begin to concentrate
-                                around the intended average.
-                            </p>
-                        </div>
-
-                        <div class="data-item">
-                            <img src="images/akaimage3.png"
-                                alt="Distribution of pulls required to obtain ten featured characters">
-
-                            <p class="caption">
-                                The ten-character simulation demonstrates the long-term
-                                consistency of the probability model.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="gacha-design-outcome">
-                    <h3>Design Outcome</h3>
-
-                    <p>
-                        The final model creates a progression from uncertainty to reliability.
-                        Early pulls preserve the excitement of chance, while the increasing
-                        probability and hard pity progressively reduce the influence of bad luck.
-                        Simulation results showed that character acquisition was concentrated
-                        around the intended range while extreme outcomes became increasingly
-                        uncommon over multiple acquisitions.
-                    </p>
-
-                    <p>
-                        The system also supports the wider theme of the game. Since the world is
-                        built around a society obsessed with gacha and virtual idols, mechanics
-                        such as pity, featured characters, banner cycles and saving currency are
-                        designed to resemble systems found in commercial gacha games. This makes
-                        the gacha system both a gameplay mechanic and part of the game's
-                        role-playing experience.
-                    </p>
-                </section>
-            </section>
-
-            <section id="progression">
-                <h3>Progression</h3>
                 <p>
-                    The game's progression revolves around a cycle of working,
-                    earning currency, and participating in gacha. Players earn
-                    in-game currency through their jobs, which can then be spent
-                    on pulling characters from the gacha system. The characters
-                    obtained contribute towards meeting promotion requirements,
-                    allowing players to advance to higher job tiers.
+                    As one of the core mechanics of the game, the gacha system was designed
+                    to recreate the tension and excitement of modern gacha games while
+                    preventing long periods of bad luck from becoming overly frustrating.
                 </p>
 
                 <p>
-                    As players progress through their careers, promotions unlock
-                    higher salaries, enabling them to earn more currency and
-                    perform more gacha pulls. This creates a continuous progression
-                    loop where working supports gacha participation, while gacha
-                    rewards contribute to career advancement.
+                    Early pulls are intentionally unpredictable, with characters having a
+                    relatively low chance of appearing. As the player continues to pull,
+                    the probability gradually increases through a pity system. This creates
+                    a sense of growing anticipation while ensuring that every unsuccessful
+                    pull still brings the player closer to a guaranteed reward.
                 </p>
             </section>
+
+            <section id="probability-model">
+                <h3>Probability Model</h3>
+
+                <p>
+                    Instead of using a fixed drop rate, I designed a power curve that
+                    increases the probability of obtaining a character as the player's
+                    pity count rises. The curve was adjusted through repeated simulations
+                    and data analysis, with the goal of placing the typical character
+                    acquisition point at approximately 80–100 pulls while maintaining
+                    a hard guarantee at 150 pulls.
+                </p>
+
+                <div class="data">
+                    <img src="images/akaimage1.png"
+                        alt="Graph showing the probability of obtaining a character as pity increases">
+
+                    <p class="caption">
+                        Character probability increases progressively with pity,
+                        eventually reaching a 100% guarantee at 150 pulls.
+                    </p>
+                </div>
+            </section>
+
+            <section id="feature-character-system">
+                <h3>Featured Character System</h3>
+
+                <p>
+                    Obtaining a high-rarity character does not always guarantee the featured
+                    character. The system therefore includes an additional featured-character
+                    mechanic. Failing to obtain the featured character increases the player's
+                    chance of receiving it during subsequent pulls, eventually leading to a
+                    guaranteed featured reward.
+                </p>
+
+                <div class="data">
+                    <img src="images/akaimage4.png"
+                        alt="Graph showing the probability of obtaining the featured character">
+
+                    <p class="caption">
+                        The featured-character probability increases after an unsuccessful
+                        result, reducing the impact of repeated bad luck.
+                    </p>
+                </div>
+            </section>
+
+            <section id="simluation-balancing">
+                <h3>Simulation & Balancing</h3>
+
+                <p>
+                    To evaluate the system beyond individual pulls, I ran large-scale
+                    simulations and recorded the number of pulls required to obtain featured
+                    characters. This allowed me to examine both the expected outcome and
+                    unusually lucky or unlucky cases before adjusting the probability model.
+                </p>
+
+                <div class="data-grid">
+                    <div class="data-item">
+                        <img src="images/akaimage2.png"
+                            alt="Distribution of pulls required to obtain one featured character">
+
+                        <p class="caption">
+                            Distribution of pulls required to obtain one featured character.
+                        </p>
+                    </div>
+
+                    <div class="data-item">
+                        <img src="images/akaimage5.png"
+                            alt="Distribution of pulls required to obtain six featured characters">
+
+                        <p class="caption">
+                            Across multiple acquisitions, results begin to concentrate
+                            around the intended average.
+                        </p>
+                    </div>
+
+                    <div class="data-item">
+                        <img src="images/akaimage3.png"
+                            alt="Distribution of pulls required to obtain ten featured characters">
+
+                        <p class="caption">
+                            The ten-character simulation demonstrates the long-term
+                            consistency of the probability model.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gacha-design-outcome">
+                <h3>Design Outcome</h3>
+
+                <p>
+                    The final model creates a progression from uncertainty to reliability.
+                    Early pulls preserve the excitement of chance, while the increasing
+                    probability and hard pity progressively reduce the influence of bad luck.
+                    Simulation results showed that character acquisition was concentrated
+                    around the intended range while extreme outcomes became increasingly
+                    uncommon over multiple acquisitions.
+                </p>
+
+                <p>
+                    The system also supports the wider theme of the game. Since the world is
+                    built around a society obsessed with gacha and virtual idols, mechanics
+                    such as pity, featured characters, banner cycles and saving currency are
+                    designed to resemble systems found in commercial gacha games. This makes
+                    the gacha system both a gameplay mechanic and part of the game's
+                    role-playing experience.
+                </p>
+            </section>
+        </section>
+
+        <section id="progression">
+            <h3>Progression</h3>
+            <p>
+                The game's progression revolves around a cycle of working,
+                earning currency, and participating in gacha. Players earn
+                in-game currency through their jobs, which can then be spent
+                on pulling characters from the gacha system. The characters
+                obtained contribute towards meeting promotion requirements,
+                allowing players to advance to higher job tiers.
+            </p>
+                
+            <p>
+                As players progress through their careers, promotions unlock
+                higher salaries, enabling them to earn more currency and
+                perform more gacha pulls. This creates a continuous progression
+                loop where working supports gacha participation, while gacha
+                rewards contribute to career advancement.
+            </p>
         </section>
 
         <section id="patch notes">
