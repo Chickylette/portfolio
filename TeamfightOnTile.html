@@ -100,6 +100,15 @@
             <section id="pathfinding">
                 <h3>Pathfinding Behaviour</h3>
 
+                <p>
+                    The flowchart below illustrates how units automatically locate, approach, and attack enemies during combat. 
+                    Each unit searches for a target and checks whether it is within attack range. 
+                    If the target is out of range, the unit uses the A* pathfinding algorithm to calculate a route towards a neighbouring tile of 
+                    the target, taking terrain movement costs and obstacles into account.
+
+                    After moving to the next tile, the unit checks its attack range again and recalculates its path if the target has moved. 
+                    This process continues until the target is defeated, at which point the unit searches for a new enemy and repeats the cycle.
+                </p>
                 <div class="flowchart-container">
                     <pre class="mermaid">
                         flowchart TD
@@ -126,7 +135,7 @@
             </section>
 
             <section id="ai">
-
+                <h3>Unit AI</h3>
             </section>
        </section>
     </section>
