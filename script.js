@@ -55,6 +55,24 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error("Footer failed to load:", error));
 
+    /* =========================
+       MERMAID FLOWCHART
+    ========================== */
+
+    if (typeof mermaid !== "undefined") {
+        mermaid.initialize({
+            startOnLoad: false,
+            theme: "default",
+            flowchart: {
+                curve: "basis",
+                htmlLabels: true
+            }
+        });
+
+        mermaid.run({
+            querySelector: ".mermaid"
+        });
+    }
 });
 
 /* =========================
@@ -88,41 +106,4 @@ imageModal.addEventListener("click", function (event) {
 
         imageModal.classList.remove("open");
     }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    /* =========================
-       LOAD MENU
-    ========================== */
-
-    // Your existing menu code here
-
-
-    /* =========================
-       LOAD FOOTER
-    ========================== */
-
-    // Your existing footer code here
-
-
-    /* =========================
-       MERMAID FLOWCHART
-    ========================== */
-
-    if (typeof mermaid !== "undefined") {
-        mermaid.initialize({
-            startOnLoad: false,
-            theme: "default",
-            flowchart: {
-                curve: "basis",
-                htmlLabels: true
-            }
-        });
-
-        mermaid.run({
-            querySelector: ".mermaid"
-        });
-    }
-
 });
