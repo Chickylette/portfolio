@@ -116,3 +116,13 @@ p {
     grid-template-columns: 1fr;
   }
 }
+
+ul {
+  margin-left: 30px;
+  margin-top: 8px;
+}
+
+li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
