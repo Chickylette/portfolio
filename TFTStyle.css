@@ -291,3 +291,30 @@ p {
 .grass { background-color: #4caf50; }
 .water { background-color: #2196f3; }
 .mountain { background-color: #222222; }
+
+.unit-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.unit-table th,
+.unit-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.unit-table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.unit-table tbody tr:hover {
+    background-color: #f8f8f8;
+}
+
+.unit-table td:first-child {
+    white-space: nowrap;
+}

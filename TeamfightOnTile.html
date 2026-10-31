@@ -27,6 +27,9 @@
             Players must consider not only their team composition but also how the terrain affects combat.
        </p>
 
+       <section id="design-goals">
+        
+       </section>
         <section id="hexgrid">
             <h3>Hex Gird</h3>
 
@@ -136,12 +139,87 @@
             </section>
         </section>
 
-        <section id="astar">
+        <section id="Combat">
+            <h3>Combat</h3>
+                <p></p>
+                <section id="unit-types">
+                    <h3>Unit Types & Roles</h3>
 
-        </section>
+                    <p>
+                        Unit drafting is one of the core mechanics of TeamFight on Tiles.
+                        To maintain a manageable development scope while providing
+                        strategic variety, the game features a roster of approximately
+                        ten units, divided into four distinct categories:
+                        Frontliner, Backliner, Tank, and Special.
+                    </p>
 
-        <section id="ai">
-            <h3>Unit AI</h3>
+                    <p>
+                        Each category has a defined combat role and set of mechanics,
+                        allowing players to make informed drafting decisions and
+                        develop different team compositions.
+                    </p>
+
+                    <div class="table-container">
+                        <table class="unit-table">
+                            <thead>
+                                <tr>
+                                    <th>Unit Type</th>
+                                    <th>Combat Range</th>
+                                    <th>MP Generation</th>
+                                    <th>Role & Behaviour</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td><strong>Frontliner</strong></td>
+                                    <td>Close-range</td>
+                                    <td>Attacking</td>
+                                    <td>
+                                        Offensive melee units that penetrate enemy
+                                        formations and pressure Backliners,
+                                        disrupting rear-positioned damage dealers.
+                                        Fighters belong to this category.
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Backliner</strong></td>
+                                    <td>Long-range</td>
+                                    <td>Attacking</td>
+                                    <td>
+                                        Ranged damage dealers that provide sustained
+                                        damage from a safe distance, primarily
+                                        targeting enemy Tanks and frontline units.
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Tank</strong></td>
+                                    <td>Close-Range</td>
+                                    <td>Attacking and receiving damage</td>
+                                    <td>
+                                        High-HP, low-damage units designed to absorb
+                                        attacks and draw enemy aggro, protecting
+                                        allied damage dealers.
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Special</strong></td>
+                                    <td>Varies</td>
+                                    <td>Varies by unit</td>
+                                    <td>
+                                        Units featuring unique mechanics or
+                                        conditional behaviours that introduce
+                                        alternative strategies and situational
+                                        advantages.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
         </section>
     </section>
 </body>
