@@ -141,85 +141,238 @@
 
         <section id="Combat">
             <h3>Combat</h3>
-                <p></p>
-                <section id="unit-types">
-                    <h3>Unit Types & Roles</h3>
+            <p></p>
+            <section id="unit-types">
+                <h3>Unit Types & Roles</h3>
 
-                    <p>
-                        Unit drafting is one of the core mechanics of TeamFight on Tiles.
-                        To maintain a manageable development scope while providing
-                        strategic variety, the game features a roster of approximately
-                        ten units, divided into four distinct categories:
-                        Frontliner, Backliner, Tank, and Special.
-                    </p>
+                <p>
+                    Unit drafting is one of the core mechanics of TeamFight on Tiles.
+                    To maintain a manageable development scope while providing
+                    strategic variety, the game features a roster of approximately
+                    ten units, divided into four distinct categories:
+                    Frontliner, Backliner, Tank, and Special.
+                </p>
+                
+                <p>
+                    Each category has a defined combat role and set of mechanics,
+                    allowing players to make informed drafting decisions and
+                    develop different team compositions.
+                </p>
 
-                    <p>
-                        Each category has a defined combat role and set of mechanics,
-                        allowing players to make informed drafting decisions and
-                        develop different team compositions.
-                    </p>
+                <div class="table-container">
+                    <table class="unit-table">
+                        <thead>
+                            <tr>
+                                <th>Unit Type</th>
+                                <th>Combat Range</th>
+                                <th>MP Generation</th>
+                                <th>Role & Behaviour</th>
+                            </tr>
+                        </thead>
 
-                    <div class="table-container">
-                        <table class="unit-table">
-                            <thead>
-                                <tr>
-                                    <th>Unit Type</th>
-                                    <th>Combat Range</th>
-                                    <th>MP Generation</th>
-                                    <th>Role & Behaviour</th>
-                                </tr>
-                            </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Frontliner</strong></td>
+                            <td>Close-range</td>
+                                <td>Attacking</td>
+                                <td>
+                                    Offensive melee units that penetrate enemy
+                                    formations and pressure Backliners,
+                                    disrupting rear-positioned damage dealers.
+                                    Fighters belong to this category.
+                                </td>
+                            </tr>
 
-                            <tbody>
-                                <tr>
-                                    <td><strong>Frontliner</strong></td>
-                                    <td>Close-range</td>
-                                    <td>Attacking</td>
-                                    <td>
-                                        Offensive melee units that penetrate enemy
-                                        formations and pressure Backliners,
-                                        disrupting rear-positioned damage dealers.
-                                        Fighters belong to this category.
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td><strong>Backliner</strong></td>
+                                <td>Long-range</td>
+                                <td>Attacking</td>
+                                <td>
+                                    Ranged damage dealers that provide sustained
+                                    damage from a safe distance, primarily
+                                    targeting enemy Tanks and frontline units.
+                                </td>
+                            </tr>
 
-                                <tr>
-                                    <td><strong>Backliner</strong></td>
-                                    <td>Long-range</td>
-                                    <td>Attacking</td>
-                                    <td>
-                                        Ranged damage dealers that provide sustained
-                                        damage from a safe distance, primarily
-                                        targeting enemy Tanks and frontline units.
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td><strong>Tank</strong></td>
+                                <td>Close-Range</td>
+                                <td>Attacking and receiving damage</td>
+                                <td>
+                                    High-HP, low-damage units designed to absorb
+                                    attacks and draw enemy aggro, protecting
+                                    allied damage dealers.
+                                </td>
+                            </tr>
 
-                                <tr>
-                                    <td><strong>Tank</strong></td>
-                                    <td>Close-Range</td>
-                                    <td>Attacking and receiving damage</td>
-                                    <td>
-                                        High-HP, low-damage units designed to absorb
-                                        attacks and draw enemy aggro, protecting
-                                        allied damage dealers.
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td><strong>Special</strong></td>
+                                <td>Varies</td>
+                                <td>Varies by unit</td>
+                                <td>
+                                    Units featuring unique mechanics or
+                                    conditional behaviours that introduce
+                                    alternative strategies and situational
+                                    advantages.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-                                <tr>
-                                    <td><strong>Special</strong></td>
-                                    <td>Varies</td>
-                                    <td>Varies by unit</td>
-                                    <td>
-                                        Units featuring unique mechanics or
-                                        conditional behaviours that introduce
-                                        alternative strategies and situational
-                                        advantages.
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
+            <section id="unit-rarity">
+                <h3>Unit Rarity</h3>
+                
+                <p>
+                    A unit rarity system was introduced to distinguish unit
+                    strength and support progression throughout the game.
+                    Units are divided into three tiers: Common (C),
+                    Uncommon (UC), and Rare (R).
+                </p>
+
+                <p>
+                    Each rarity serves a different purpose at various stages
+                    of gameplay, allowing players to gradually build stronger
+                    team compositions through unit drafting.
+                </p>
+
+                <h4>Rarity Classification</h4>
+
+                <div class="table-container">
+                    <table class="rarity-table">
+                        <thead>
+                            <tr>
+                                <th>Rarity</th>
+                                <th>Gameplay Stage</th>
+                                <th>Design Purpose</th>
+                                <th>Visual Design</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Common (C)</strong>
+                                </td>
+                                <td>Early Game</td>
+                                <td>
+                                    Starting units such as Fighter, Ranger,
+                                    and Tank. Effective during the first
+                                    five rounds, but gradually become less
+                                    impactful in later stages.
+                                </td>
+                                <td>
+                                    Simple polygonal meshes provided
+                                    within Unreal Engine.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong>Uncommon (UC)</strong>
+                                </td>
+                                <td>Mid to Late Game</td>
+                                <td>
+                                    Form the primary combat force, providing
+                                    increased strength to handle more advanced
+                                    enemy waves while maintaining strategic
+                                    balance.
+                                </td>
+                                <td>
+                                    More specialised polygonal forms
+                                    that distinguish them from Common units.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong>Rare (R)</strong>
+                                </td>
+                                <td>Late Game</td>
+                                <td>
+                                    Exceptionally powerful units featuring
+                                    unique abilities or game-changing
+                                    mechanics. Designed to provide significant
+                                    advantages in late-game encounters.
+                                </td>
+                                <td>
+                                    Distinctive designs inspired by games
+                                    and anime, emphasising their power,
+                                    rarity, and unique identity.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Reward Distribution</h4>
+
+                <p>
+                    Unit rarity probabilities change as the game progresses.
+                    Early reward rounds prioritise Common units to provide
+                    players with accessible starting options. Uncommon units
+                    become more prominent during the mid-game, while Rare
+                    units are gradually introduced in later rounds.
+                </p>
+
+                <div class="table-container">
+                    <table class="rarity-table">
+                        <thead>
+                            <tr>
+                                <th>Round</th>
+                                <th>Common (C)</th>
+                                <th>Uncommon (UC)</th>
+                                <th>Rare (R)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>3</td>
+                                <td>80%</td>
+                                <td>20%</td>
+                                <td>0%</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>0%</td>
+                                <td>100%</td>
+                                <td>0%</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>30%</td>
+                                <td>50%</td>
+                                <td>20%</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>20%</td>
+                                <td>40%</td>
+                                <td>40%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Design Rationale</h4>
+
+                <p>
+                    The reward distribution is designed to align unit
+                    availability with expected player progression.
+                    Common units provide a stable foundation during the
+                    early game, while Uncommon units support the transition
+                    towards more challenging encounters.
+                </p>
+
+                <p>
+                    As the game advances, the increasing probability of
+                    obtaining Rare units introduces high-impact drafting
+                    opportunities. This progression encourages strategic
+                    team-building while preventing players from becoming
+                    overly powerful during the early stages or trivialising
+                    late-game challenges.
+                </p>
+            </section>
         </section>
     </section>
 </body>
