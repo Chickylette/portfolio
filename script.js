@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
             icon: "⚔️",
             image: "images/TFT_Fighter.png",
             description:
-                "Close-range attacker designed to pressure enemies.",
+                "Introductory close-range attacker designed to pressure enemies.",
             rationale:
                 "The Fighter was designed as an early-game accessible offensive " +
                 "unit that introduces players to frontline pressure. " +
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
             icon: "🏹",
             image: "images/TFT_Ranger.png",
             description:
-                "Ranged damage dealer that attacks from behind allied units.",
+                "Introductory ranged damage dealer that attacks from behind allied units.",
             rationale:
                 "The Ranger was designed to establish a foundational " +
                 "implementation of projectile behaviour and bullet traversal within the game," +
@@ -165,11 +165,11 @@ document.addEventListener("DOMContentLoaded", function () {
             hp: "Medium",
             range: "Melee",
             mp: "On attack and damage taken",
-            skill: "",
+            skill: "Heals itself for a second",
             icon: "🛡️",
             image: "images/TFT_Tank.png",
             description:
-                "Defensive unit designed to absorb attacks and protect allies.",
+                "Introductory defensive unit designed to absorb attacks and protect allies.",
             rationale:
                 "The Tank was designed to provide a defensive foundation " +
                 "for team compositions. Its high HP and ability to " +
