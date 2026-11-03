@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
             hp: "Medium",
             range: "Melee",
             mp: "On attack",
-            skill: "",
+            skill: "Attack 3 times rapidly",
             icon: "⚔️",
             image: "images/TFT_Fighter.png",
             description:
