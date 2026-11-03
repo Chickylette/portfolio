@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
             mp: "On attack",
             skill: "",
             icon: "🏹",
-            image: "",
+            image: "images/TFT_Ranger.png",
             description:
                 "Ranged damage dealer that attacks from behind allied units.",
             rationale:
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
             mp: "On attack and damage taken",
             skill: "",
             icon: "🛡️",
-            image: "",
+            image: "images/TFT_Tank.png",
             description:
                 "Defensive unit designed to absorb attacks and protect allies.",
             rationale:
