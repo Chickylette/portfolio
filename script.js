@@ -107,3 +107,38 @@ imageModal.addEventListener("click", function (event) {
         imageModal.classList.remove("open");
     }
 });
+
+const unitData = {
+    fighter: {
+        name: "Fighter",
+        description:
+            "A close-range Frontliner that gains MP " +
+            "through attacking and pressures enemy Backliners."
+    },
+    ranger: {
+        name: "Ranger",
+        description:
+            "A long-range Backliner that provides " +
+            "sustained damage from a safe distance."
+    },
+    tank: {
+        name: "Tank",
+        description:
+            "A defensive unit with high HP that gains MP " +
+            "through attacking and receiving damage."
+    }
+};
+
+document.querySelectorAll(".unit-card").forEach(card => {
+    card.addEventListener("click", () => {
+        const unit = unitData[card.dataset.unit];
+
+        if (!unit) return;
+
+        document.getElementById("unit-name").textContent =
+            unit.name;
+
+        document.getElementById("unit-description").textContent =
+            unit.description;
+    });
+});

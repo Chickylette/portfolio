@@ -348,3 +348,45 @@ p {
     width: 100%;
     overflow-x: auto;
 }
+
+.unit-gallery {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(160px, 1fr)
+    );
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.unit-card {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.unit-card:hover {
+    transform: translateY(-5px);
+}
+
+.unit-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+
+.unit-details {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    .unit-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
