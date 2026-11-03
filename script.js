@@ -131,9 +131,9 @@ document.addEventListener("DOMContentLoaded", function () {
             icon: "⚔️",
             image: "images/TFT_Fighter.png",
             description:
-                "Close-range attacker designed to pressure enemy Backliners.",
+                "Close-range attacker designed to pressure enemies.",
             rationale:
-                "The Fighter was designed as an accessible offensive " +
+                "The Fighter was designed as an early-game accessible offensive " +
                 "unit that introduces players to frontline pressure. " +
                 "Its close-range attacks encourage aggressive positioning, " +
                 "while generating MP through attacking rewards " +
