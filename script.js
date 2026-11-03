@@ -147,16 +147,15 @@ document.addEventListener("DOMContentLoaded", function () {
             hp: "Low",
             range: "Ranged",
             mp: "On attack",
-            skill: "",
+            skill: "Shoots 4x Faster for 5 seconds",
             icon: "🏹",
             image: "images/TFT_Ranger.png",
             description:
                 "Ranged damage dealer that attacks from behind allied units.",
             rationale:
-                "The Ranger was designed to demonstrate the importance " +
-                "of protecting damage dealers through team positioning. " +
-                "Its ranged attacks allow it to deal sustained damage " +
-                "while relying on allied frontline units for protection."
+                "The Ranger was designed to establish a foundational " +
+                "implementation of projectile behaviour and bullet traversal within the game," +
+                "providing a reliable reference for future ranged units."
         },
         {
             id: "tank",
