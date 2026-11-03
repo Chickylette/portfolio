@@ -114,56 +114,188 @@ imageModal.addEventListener("click", function (event) {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const unitData = {
-        fighter: {
+    const unitData = [
+        {
+            id: "fighter",
             name: "Fighter",
+            rarity: "Common",
+            role: "Frontliner",
+            hp: "Medium",
+            range: "Melee",
+            mp: "On attack",
+            skill: "",
+            icon: "⚔️",
+            image: "images/TFT_Fighter",
             description:
-                "A close-range Frontliner that gains MP " +
-                "through attacking and pressures enemy Backliners." +
-                "\nAttacks 3x times quickyly when skill activated."
+                "Close-range attacker designed to pressure enemy Backliners.",
+            rationale:
+                "The Fighter was designed as an accessible offensive " +
+                "unit that introduces players to frontline pressure. " +
+                "Its close-range attacks encourage aggressive positioning, " +
+                "while generating MP through attacking rewards " +
+                "sustained engagement."
         },
-        ranger: {
+        {
+            id: "ranger",
             name: "Ranger",
+            rarity: "Common",
+            role: "Backliner",
+            hp: "Low",
+            range: "Ranged",
+            mp: "On attack",
+            skill: "",
+            icon: "🏹",
+            image: "",
             description:
-                "A long-range Backliner that provides " +
-                "sustained damage from a safe distance."
+                "Ranged damage dealer that attacks from behind allied units.",
+            rationale:
+                "The Ranger was designed to demonstrate the importance " +
+                "of protecting damage dealers through team positioning. " +
+                "Its ranged attacks allow it to deal sustained damage " +
+                "while relying on allied frontline units for protection."
         },
-        tank: {
+        {
+            id: "tank",
             name: "Tank",
+            rarity: "Common",
+            role: "Tank",
+            hp: "High",
+            range: "Melee",
+            mp: "On attack and damage taken",
+            skill: "",
+            icon: "🛡️",
+            image: "",
             description:
-                "A defensive unit with high HP that gains MP " +
-                "through attacking and receiving damage."
+                "Defensive unit designed to absorb attacks and protect allies.",
+            rationale:
+                "The Tank was designed to provide a defensive foundation " +
+                "for team compositions. Its high HP and ability to " +
+                "generate MP when receiving damage encourage players " +
+                "to position it where it can absorb enemy attacks " +
+                "and protect vulnerable allies."
         }
-    };
+    ];
 
-    const unitCards = document.querySelectorAll(".unit-card");
-    const unitName = document.getElementById("unit-name");
-    const unitDescription =
-        document.getElementById("unit-description");
+    const gallery = document.getElementById("unit-gallery");
+    const details = document.getElementById("unit-details");
 
-    if (!unitCards.length || !unitName || !unitDescription) {
-        return;
-    }
+    if (!gallery || !details) return;
 
-    unitCards.forEach(function (card) {
+    let selectedUnit = unitData[0].id;
+    let activeFilter = "All";
 
-        card.addEventListener("click", function () {
+    function renderGallery() {
+        gallery.innerHTML = "";
 
-            const unitId = card.dataset.unit;
-            const unit = unitData[unitId];
+        const filteredUnits = unitData.filter(unit =>
+            activeFilter === "All" ||
+            unit.role === activeFilter
+        );
 
-            if (!unit) {
-                console.error("Unit not found:", unitId);
-                return;
+        filteredUnits.forEach(unit => {
+            const card = document.createElement("button");
+
+            card.type = "button";
+            card.className = "unit-card";
+
+            if (unit.id === selectedUnit) {
+                card.classList.add("selected");
             }
 
-            unitName.textContent = unit.name;
-            unitDescription.textContent = unit.description;
+            const imageContainer = document.createElement("div");
+            imageContainer.className = "unit-image";
 
-            console.log("Selected unit:", unit.name);
+            if (unit.image) {
+                const img = document.createElement("img");
+                img.src = unit.image;
+                img.alt = unit.name;
+                imageContainer.appendChild(img);
+            } else {
+                const icon = document.createElement("span");
+                icon.className = "placeholder-icon";
+                icon.textContent = unit.icon;
+                imageContainer.appendChild(icon);
+            }
+
+            const name = document.createElement("h4");
+            name.textContent = unit.name;
+
+            const rarity = document.createElement("p");
+            rarity.textContent = unit.rarity;
+
+            card.append(imageContainer, name, rarity);
+
+            card.addEventListener("click", () => {
+                selectedUnit = unit.id;
+                renderGallery();
+                renderDetails();
+            });
+
+            gallery.appendChild(card);
         });
+    }
 
+    function renderDetails() {
+        const unit = unitData.find(u => u.id === selectedUnit);
+
+        if (!unit) return;
+
+        document.getElementById("unit-name").textContent =
+            unit.name;
+
+        document.getElementById("unit-rarity").textContent =
+            unit.rarity;
+
+        document.getElementById("unit-description").textContent =
+            unit.description;
+
+        document.getElementById("unit-role").textContent =
+            unit.role;
+
+        document.getElementById("unit-hp").textContent =
+            unit.hp;
+
+        document.getElementById("unit-range").textContent =
+            unit.range;
+
+        document.getElementById("unit-mp").textContent =
+            unit.mp;
+
+        document.getElementById("unit-rationale-text").textContent =
+            unit.rationale;
+    }
+
+    document.querySelectorAll(".filter-btn").forEach(button => {
+        button.addEventListener("click", () => {
+            activeFilter = button.dataset.filter;
+
+            document.querySelectorAll(".filter-btn")
+                .forEach(btn => btn.classList.remove("active"));
+
+            button.classList.add("active");
+
+            const visibleUnits = unitData.filter(unit =>
+                activeFilter === "All" ||
+                unit.role === activeFilter
+            );
+
+            if (visibleUnits.length > 0) {
+                if (!visibleUnits.some(u => u.id === selectedUnit)) {
+                    selectedUnit = visibleUnits[0].id;
+                }
+
+                details.hidden = false;
+                renderDetails();
+            } else {
+                details.hidden = true;
+            }
+
+            renderGallery();
+        });
     });
 
+    renderGallery();
+    renderDetails();
 });
+
 
