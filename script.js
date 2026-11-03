@@ -79,33 +79,37 @@ document.addEventListener("DOMContentLoaded", function () {
    IMAGE GALLERY MODAL
 ========================= */
 
-const galleryImages = document.querySelectorAll(".gallery-grid img");
+document.addEventListener("DOMContentLoaded", function () {
 
-const imageModal = document.getElementById("imageModal");
-const modalImage = document.getElementById("modalImage");
-const closeModal = document.getElementById("closeModal");
+    const galleryImages =
+        document.querySelectorAll(".gallery-grid img");
 
-galleryImages.forEach(function (image) {
+    const imageModal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const closeModal = document.getElementById("closeModal");
 
-    image.addEventListener("click", function () {
-
-        modalImage.src = image.src;
-
-        imageModal.classList.add("open");
-    });
-});
-
-closeModal.addEventListener("click", function () {
-
-    imageModal.classList.remove("open");
-});
-
-imageModal.addEventListener("click", function (event) {
-
-    if (event.target === imageModal) {
-
-        imageModal.classList.remove("open");
+    // Skip gallery functionality on pages without a modal
+    if (!imageModal || !modalImage || !closeModal) {
+        return;
     }
+
+    galleryImages.forEach(function (image) {
+        image.addEventListener("click", function () {
+            modalImage.src = image.src;
+            imageModal.classList.add("open");
+        });
+    });
+
+    closeModal.addEventListener("click", function () {
+        imageModal.classList.remove("open");
+    });
+
+    imageModal.addEventListener("click", function (event) {
+        if (event.target === imageModal) {
+            imageModal.classList.remove("open");
+        }
+    });
+
 });
 
 /* =========================
@@ -125,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
             mp: "On attack",
             skill: "",
             icon: "⚔️",
-            image: "images/TFT_Fighter",
+            image: "images/TFT_Fighter.png",
             description:
                 "Close-range attacker designed to pressure enemy Backliners.",
             rationale:
