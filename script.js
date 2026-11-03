@@ -119,7 +119,8 @@ document.addEventListener("DOMContentLoaded", function () {
             name: "Fighter",
             description:
                 "A close-range Frontliner that gains MP " +
-                "through attacking and pressures enemy Backliners."
+                "through attacking and pressures enemy Backliners." +
+                "\nAttacks 3x times quickyly when skill activated."
         },
         ranger: {
             name: "Ranger",
