@@ -108,37 +108,61 @@ imageModal.addEventListener("click", function (event) {
     }
 });
 
-const unitData = {
-    fighter: {
-        name: "Fighter",
-        description:
-            "A close-range Frontliner that gains MP " +
-            "through attacking and pressures enemy Backliners."
-    },
-    ranger: {
-        name: "Ranger",
-        description:
-            "A long-range Backliner that provides " +
-            "sustained damage from a safe distance."
-    },
-    tank: {
-        name: "Tank",
-        description:
-            "A defensive unit with high HP that gains MP " +
-            "through attacking and receiving damage."
+/* =========================
+   UNIT SHOWCASE
+========================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const unitData = {
+        fighter: {
+            name: "Fighter",
+            description:
+                "A close-range Frontliner that gains MP " +
+                "through attacking and pressures enemy Backliners."
+        },
+        ranger: {
+            name: "Ranger",
+            description:
+                "A long-range Backliner that provides " +
+                "sustained damage from a safe distance."
+        },
+        tank: {
+            name: "Tank",
+            description:
+                "A defensive unit with high HP that gains MP " +
+                "through attacking and receiving damage."
+        }
+    };
+
+    const unitCards = document.querySelectorAll(".unit-card");
+    const unitName = document.getElementById("unit-name");
+    const unitDescription =
+        document.getElementById("unit-description");
+
+    if (!unitCards.length || !unitName || !unitDescription) {
+        return;
     }
-};
 
-document.querySelectorAll(".unit-card").forEach(card => {
-    card.addEventListener("click", () => {
-        const unit = unitData[card.dataset.unit];
+    unitCards.forEach(function (card) {
 
-        if (!unit) return;
+        card.addEventListener("click", function () {
 
-        document.getElementById("unit-name").textContent =
-            unit.name;
+            const unitId = card.dataset.unit;
+            const unit = unitData[unitId];
 
-        document.getElementById("unit-description").textContent =
-            unit.description;
+            if (!unit) {
+                console.error("Unit not found:", unitId);
+                return;
+            }
+
+            unitName.textContent = unit.name;
+            unitDescription.textContent = unit.description;
+
+            console.log("Selected unit:", unit.name);
+        });
+
     });
+
 });
+
