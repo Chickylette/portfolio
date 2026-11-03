@@ -172,11 +172,133 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Introductory defensive unit designed to absorb attacks and protect allies.",
             rationale:
                 "The Tank was designed to provide a defensive foundation " +
-                "for team compositions. Its high HP and ability to " +
-                "generate MP when receiving damage encourage players " +
-                "to position it where it can absorb enemy attacks " +
-                "and protect vulnerable allies."
-        }
+                "for team compositions, solidifies the role of a Tank."
+        },
+        {
+            id: "star",
+            name: "Star",
+            rarity: "Uncommon",
+            role: "Backliner",
+            hp: "Medium",
+            range: "Ranged",
+            mp: "On attack",
+            skill: "Shoots a healing bullet towards the highest lost HP ally and heal it.",
+            icon: "🏹",
+            image: "images/TFT_Star.png",
+            description:
+                "A ranged unit that able to deal damage and heals allies",
+            rationale:
+                "The Star was designed to introduce a supportive functionality into the game, " +
+                " offering players an alternative Backliner option that enhances team sustainability and strategic diversity."
+        },
+        {
+            id: "donut",
+            name: "Donut",
+            rarity: "Uncommon",
+            role: "Backliner",
+            hp: "Low",
+            range: "Ranged",
+            mp: "On attack",
+            skill: "Doubles its attack speed (Stackable)",
+            icon: "🏹",
+            image: "images/TFT_Donut.png",
+            description:
+                "An enhanced variant of the Ranger that deals more damage and shoot faster",
+            rationale:
+                "The Donut was designed to offer players an alternative ranged damage dealer with a stronger emphasis on sustained fire."
+        },
+        {
+            id: "pyramid",
+            name: "Pyramid",
+            rarity: "Uncommon",
+            role: "Tank",
+            hp: "High",
+            range: "Melee",
+            mp: "On attack",
+            skill: "Gain Damage Reduction for a short period of time",
+            icon: "🛡️",
+            image: "images/TFT_Pyramid.png",
+            description:
+                "An enhanced variant of the Tank that improves survivability",
+            rationale:
+                "The Pyramid was designed to offer increased survivability and allowing it to endure greater damage in " +
+                "combat while fulfilling a similar frontline role."
+        },
+        {
+            id: "ramiel",
+            name: "Ramiel",
+            rarity: "Rare",
+            role: "Special",
+            hp: "High",
+            range: "Ranged",
+            mp: "Attack neglected",
+            skill: "Ramiel swaps to Destruction Mode and can be attacked now. It will charge up for a short period of time. " +
+            "It then will shoot a laser towards the last attacker and sweep in 360 angle. Each target it hits take damage and " +
+            "all projectiles will be destroyed on hit. After the sweep, all hit targets take 100 damage and it will then " +
+            "changes back to Idle Mode. ",
+            icon: "✨",
+            image: "images/TFT_Ramiel.png",
+            description:
+                "Ramiel has two modes: Idle Mode and Destruction Mode. It enters Idle Mode at the beginning of the round. " +
+                "In Idle Mode, it cannot attack any units. It can neglects all types of damage and increases MP when attack neglected. " +
+                "Projectiles will be destroyed when it hits Ramiel. ",
+            rationale:
+                "Ramiel was designed as a tribute to the iconic character " +
+                "from the anime Neon Genesis Evangelion. Both its visual " +
+                "design and attack sequence were recreated to closely " +
+                "resemble their original counterparts, capturing the " +
+                "character's distinctive appearance and combat behaviour."
+        },
+        {
+            id: "gwen",
+            name: "Gwen",
+            rarity: "Rare",
+            role: "Frontliner",
+            hp: "High",
+            range: "Melee",
+            mp: "On Attack",
+            skill: "Cuts the enemy 5 times very fast and deals damage. Increase 1 cut for the next skill used (Stackable)",
+            icon: "⚔️",
+            image: "images/TFT_Gwen.png",
+            description:
+                "Gwen cuts through enemies with her scissors",
+            rationale:
+                "Gwen was designed with inspiration from her original " +
+                "counterpart in League of Legends, retaining her distinctive " +
+                "visual appearance and combat identity. From a gameplay " +
+                "perspective, she was introduced as a powerful Frontliner " +
+                "specialising in breaking through heavily defended enemy " +
+                "formations. Her offensive capabilities provide players " +
+                "with an effective counter to high-durability units, " +
+                "encouraging more strategic drafting and team composition."
+        },
+        {
+            id: "rimuru",
+            name: "Rimuru",
+            rarity: "Rare",
+            role: "Special",
+            hp: "High",
+            range: "Melee/Ranged",
+            mp: "Varied",
+            skill: "Rimuru does not have a normal attack. His attack pattern is based on the unit consumed with Beelzebuth. ",
+            icon: "✨",
+            image: "images/TFT_Rimuru.png",
+            description:
+                "Rimuru cannot generate MP. Rimuru will set the most left bench tile as Rimuru tile when he is on the board. " +
+                "When battle starts, he will consume the unit on it and change his form and attack pattern.",
+            rationale:
+                "Rimuru Tempest was designed as a Special Rare unit inspired " +
+                "by the character's unique abilities in That Time I Got " +
+                "Reincarnated as a Slime. Its signature ability, Beelzebuth, " +
+                "allows Rimuru to consume allied units and transform, " +
+                "adapting its appearance and attack sequence based on the " +
+                "absorbed unit. This mechanic was introduced to provide " +
+                "greater tactical flexibility, allowing players to adapt " +
+                "Rimuru's combat role to different situations. The design " +
+                "encourages strategic drafting and team composition while " +
+                "preserving the character's distinctive identity from " +
+                "the original anime."
+        },
     ];
 
     const gallery = document.getElementById("unit-gallery");
