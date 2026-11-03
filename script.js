@@ -265,6 +265,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("unit-mp").textContent =
             unit.mp;
 
+        document.getElementById("unit-skill").textContent =
+            unit.skill;
+
         document.getElementById("unit-rationale-text").textContent =
             unit.rationale;
     }
