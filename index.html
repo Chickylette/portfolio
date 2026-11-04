@@ -1,68 +1,480 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="porfStyle.css">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Jeffrey Wong's game design portfolio showcasing combat design, gameplay systems, and Unreal Engine projects.">
+
+    <title>Jeffrey Wong | Game Design Portfolio</title>
+
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
 </head>
+
 <body>
-    <div id="menuContainer"></div>  
 
-    <section id="about-me">
-        <h2>About Me</h2>
-        <p>
-          Hi, I’m Jeffrey — a Game Design postgraduate from Escape Studio and a Computer Science bachelor from the University of Birmingham with a strong passion for game development.
-          I’ve always been fascinated by how games can blend logic, creativity, and design to create meaningful and entertaining experiences.
-        </p>
-        <p>
-          My primary focus is building games from the ground up — designing mechanics, scripting systems, and creating interactive content.
-          I have worked on buidling a custom game mode in the Overwatch Workshop, where I can push creative boundaries and explore new gameplay ideas.
-        </p>
-        <p>
-          I’m continually learning and refining my skills, and I’m excited to contribute to projects that challenge and inspire me.
-        </p>
-      </section>
+    <!-- Navigation -->
+    <header class="site-header">
+        <nav class="navbar container"
+             aria-label="Main navigation">
 
-    <section id="projects">
-        <h2>Projects</h2>
-
-        <div class="projects">
-            <a href="akaMyLife.html" class="project">
-                <h3>akaMyLife</h3>
-                <p>Live the life of a fresh graduate in a gacha- and VTuber-oriented world. Daily life is shaped by devotion to beloved VTubers — Minato Aqua, Tokoyami Towa, and Hoshimachi Suisei — expressed through relentless gacha pulling. Experience the struggles, joys, and consequences of being a gacha-addicted StartEnd fan.</p>
+            <a href="index.html" class="logo">
+                🎮 Jeffrey Wong
+                <span>| Game Design</span>
             </a>
 
-            <a href="ClassroomArena.html" class="project">
-                <h3>Classroom Arena</h3>
-                <p>A fast-paced third-person action combat game set in a gauntlet-style game mode where players must survive through continuous waves of enemies using combo-based melee combat, offensive abilities, and powerful ultimate skills. The gameplay emphasises aggression, timing, and combat mastery as players overcome increasingly intense enemy encounters.</p>
-            </a>
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="navLinks">
+                ☰
+            </button>
 
-            <a href="JunkenEndlessMadness.html" class="project">
-                <h3>
-                    <img src="overwatch-icon-png-2.jpg" alt="OW Icon" style="width:40px; height:40px; vertical-align:middle; margin-right:8px;">
-                    Junkenstein's Revenge Endless Madness
-                </h3>
-                <p>A classic Overwatch PvE mode with a twist. Adding Money, Stats, Special waves and Super Ultimate to the base game.</p>
-            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="active">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
 
-            <a href="TeamfightOnTile.html" class="project">
-                <h3>Teamfight on Tile</h3>
-                <p>This is a prototype of a Teamfight Tactics like game, with the tiles are not unify and each has its own effect on units. Tiles can block units from entering it, affects unit move speed and stats etc. The objective of the game is to eliminate all the enemy units.</p>
-            </a>
+    <main>
 
-            <a href="TheElementRoad.html" class="project">
-                <h3>The Element Road</h3>
-                <p>A third-person RPG set in a world possessed with magic. The player's gifted talent grants the power to retrieve elements from surrounding objects, thus create objects or spells to solve daily requests or fight against monsters.</p>
-            </a>
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="container hero-content">
+
+                <div class="eyebrow">
+                    Game Design Portfolio
+                </div>
+
+                <h1>Jeffrey Wong</h1>
+
+                <h2>
+                    Game Designer / Combat Designer
+                </h2>
+
+                <p>
+                    A game design postgraduate with a
+                    Computer Science background,
+                    specialising in combat mechanics,
+                    gameplay systems, and interactive
+                    experiences.
+                </p>
+
+                <div class="hero-tags">
+                    <span>⚔️ Combat Design</span>
+                    <span>⚙️ Systems Design</span>
+                    <span>🎮 Gameplay Design</span>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#projects"
+                       class="btn btn-primary">
+                        Explore Projects
+                    </a>
+
+                    <a href="#about"
+                       class="btn btn-outline">
+                        About Me
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- About Me -->
+        <section class="section" id="about">
+            <div class="container">
+
+                <h2 class="section-title">About Me</h2>
+
+                <div class="about-layout">
+
+                    <div class="about-text">
+                        <p>
+                            Hi, I'm Jeffrey — a Game Design
+                            postgraduate from Escape Studios
+                            and a Computer Science graduate
+                            from the University of Birmingham.
+                        </p>
+
+                        <p>
+                            I have a strong passion for game
+                            development, particularly the
+                            relationship between gameplay
+                            mechanics, player decision-making,
+                            and engaging combat experiences.
+                        </p>
+
+                        <p>
+                            My primary focus is designing
+                            and implementing gameplay systems
+                            from the ground up, including
+                            combat mechanics, enemy AI,
+                            progression systems, and
+                            interactive content.
+                        </p>
+
+                        <p>
+                            I enjoy exploring how technical
+                            implementation and design
+                            principles can work together
+                            to create meaningful and
+                            entertaining player experiences.
+                        </p>
+                    </div>
+
+                    <aside class="skills-panel">
+                        <h3>Key Skills</h3>
+
+                        <div class="skills-grid">
+                            <div class="skill">
+                                🎮 Unreal Engine 5
+                            </div>
+
+                            <div class="skill">
+                                💻 C++
+                            </div>
+
+                            <div class="skill">
+                                🔗 Blueprints
+                            </div>
+
+                            <div class="skill">
+                                ⚔️ Combat Design
+                            </div>
+
+                            <div class="skill">
+                                ⚙️ Systems Design
+                            </div>
+
+                            <div class="skill">
+                                🧠 Enemy AI
+                            </div>
+                        </div>
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section projects-section"
+                 id="projects">
+
+            <div class="container">
+
+                <div class="projects-heading">
+                    <h2 class="section-title">
+                        Selected Projects
+                    </h2>
+
+                    <div class="project-filters"
+                         aria-label="Filter projects">
+
+                        <button class="filter-btn active"
+                                data-filter="all"
+                                aria-pressed="true">
+                            All
+                        </button>
+
+                        <button class="filter-btn"
+                                data-filter="combat"
+                                aria-pressed="false">
+                            Combat
+                        </button>
+
+                        <button class="filter-btn"
+                                data-filter="systems"
+                                aria-pressed="false">
+                            Systems
+                        </button>
+
+                        <button class="filter-btn"
+                                data-filter="rpg"
+                                aria-pressed="false">
+                            RPG
+                        </button>
+
+                        <button class="filter-btn"
+                                data-filter="other"
+                                aria-pressed="false">
+                            Other
+                        </button>
+                    </div>
+                </div>
+
+                <div class="projects-grid">
+
+                    <!-- The Element Road -->
+                    <a href="TheElementRoad.html"
+                       class="project-card"
+                       data-category="combat systems rpg">
+
+                        <img
+                            src="images/TheElementRoad.jpg"
+                            alt="The Element Road gameplay"
+                            class="project-thumbnail"
+                            loading="lazy">
+
+                        <div class="project-content">
+
+                            <span class="project-category">
+                                RPG / Systems Design
+                            </span>
+
+                            <h3>The Element Road</h3>
+
+                            <p>
+                                A third-person fantasy RPG
+                                where players collect elements
+                                from their surroundings to
+                                craft spells, solve quests,
+                                and fight monsters.
+                            </p>
+
+                            <div class="project-tags">
+                                <span>RPG</span>
+                                <span>Spell Crafting</span>
+                                <span>Combat</span>
+                            </div>
+
+                            <div class="project-link">
+                                View Project
+                                <span>→</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Classroom Arena -->
+                    <a href="ClassroomArena.html"
+                       class="project-card"
+                       data-category="combat">
+
+                        <img
+                            src="images/ClassroomArena.jpg"
+                            alt="Classroom Arena gameplay"
+                            class="project-thumbnail"
+                            loading="lazy">
+
+                        <div class="project-content">
+
+                            <span class="project-category">
+                                Combat Design
+                            </span>
+
+                            <h3>Classroom Arena</h3>
+
+                            <p>
+                                A fast-paced third-person
+                                action combat prototype
+                                featuring combo attacks,
+                                offensive abilities,
+                                enemy AI, and escalating
+                                survival waves.
+                            </p>
+
+                            <div class="project-tags">
+                                <span>Combat</span>
+                                <span>Action</span>
+                                <span>Enemy AI</span>
+                            </div>
+
+                            <div class="project-link">
+                                View Project
+                                <span>→</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Teamfight on Tiles -->
+                    <a href="TeamfightOnTile.html"
+                       class="project-card"
+                       data-category="combat systems">
+
+                        <img
+                            src="images/TeamfightOnTiles.jpg"
+                            alt="Teamfight on Tiles gameplay"
+                            class="project-thumbnail"
+                            loading="lazy">
+
+                        <div class="project-content">
+
+                            <span class="project-category">
+                                Strategy / Systems Design
+                            </span>
+
+                            <h3>Teamfight on Tiles</h3>
+
+                            <p>
+                                A hex-grid auto-battler
+                                inspired by Teamfight Tactics.
+                                Terrain influences movement,
+                                pathfinding, and tactical
+                                positioning.
+                            </p>
+
+                            <div class="project-tags">
+                                <span>Strategy</span>
+                                <span>Pathfinding</span>
+                                <span>Systems</span>
+                            </div>
+
+                            <div class="project-link">
+                                View Project
+                                <span>→</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- akaMyLife -->
+                    <a href="akaMyLife.html"
+                       class="project-card"
+                       data-category="systems rpg">
+
+                        <img
+                            src="images/akaMyLife.jpg"
+                            alt="akaMyLife gameplay"
+                            class="project-thumbnail"
+                            loading="lazy">
+
+                        <div class="project-content">
+
+                            <span class="project-category">
+                                Simulation / Systems Design
+                            </span>
+
+                            <h3>akaMyLife</h3>
+
+                            <p>
+                                A life simulation prototype
+                                set in a gacha- and
+                                VTuber-oriented world.
+                                Balance work, progression,
+                                and gacha pulling while
+                                pursuing your goals.
+                            </p>
+
+                            <div class="project-tags">
+                                <span>Simulation</span>
+                                <span>Gacha</span>
+                                <span>Progression</span>
+                            </div>
+
+                            <div class="project-link">
+                                View Project
+                                <span>→</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Junkenstein's Revenge -->
+                    <a href="JunkenEndlessMadness.html"
+                       class="project-card"
+                       data-category="combat other">
+
+                        <img
+                            src="images/Junkenstein.jpg"
+                            alt="Junkenstein's Revenge Endless Madness"
+                            class="project-thumbnail"
+                            loading="lazy">
+
+                        <div class="project-content">
+
+                            <span class="project-category">
+                                Gameplay Design
+                            </span>
+
+                            <h3>
+                                Junkenstein's Revenge:
+                                Endless Madness
+                            </h3>
+
+                            <p>
+                                A custom Overwatch PvE
+                                experience that expands
+                                the original game mode
+                                with an economy system,
+                                stat upgrades, special
+                                waves, and enhanced
+                                ultimate abilities.
+                            </p>
+
+                            <div class="project-tags">
+                                <span>Overwatch Workshop</span>
+                                <span>PvE</span>
+                                <span>Action</span>
+                            </div>
+
+                            <div class="project-link">
+                                View Project
+                                <span>→</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section contact-section"
+                 id="contact">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    Get in Touch
+                </h2>
+
+                <p>
+                    I'm interested in opportunities
+                    involving combat design, gameplay
+                    systems, and game development.
+                    Feel free to get in touch to discuss
+                    projects or opportunities.
+                </p>
+
+                <a href="mailto:jjgundam315@gmail.com"
+                   class="btn btn-primary">
+                    Contact Me
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container footer-content">
+
+            <span>
+                © 2026 Jeffrey Wong
+            </span>
+
+            <div class="footer-links">
+                <a href="mailto:jjgundam315@gmail.com">
+                    Email
+                </a>
+
+                <a href="#home">
+                    Back to Top ↑
+                </a>
+            </div>
+
         </div>
+    </footer>
 
-    </section>
 </body>
-
-<div id="footerContainer"></div>
-
-<script src="script.js"></script>
-
 </html>
