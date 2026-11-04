@@ -438,3 +438,54 @@ p {
         font-size: 20px;
     }
 }
+
+/* Roles Section */
+#role {
+    margin: 25px 0;
+}
+
+.role-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.role-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 20px;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.role-card:hover {
+    border-color: #aaa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.role-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.role-card h3 {
+    font-size: 1.05rem;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.role-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .role-container {
+        grid-template-columns: 1fr;
+    }
+}
