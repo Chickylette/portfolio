@@ -255,25 +255,25 @@ p {
     margin: 20px 0;
 }
 
-.terrain-table {
+.element-table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
     font-size: 0.95rem;
 }
 
-.terrain-table th,
-.terrain-table td {
+.element-table th,
+.element-table td {
     padding: 12px 16px;
     border-bottom: 1px solid #ddd;
 }
 
-.terrain-table th {
+.element-table th {
     background-color: #f2f2f2;
     font-weight: 600;
 }
 
-.terrain-table tbody tr:hover {
+.element-table tbody tr:hover {
     background-color: #f8f8f8;
 }
 
