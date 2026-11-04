@@ -237,39 +237,41 @@
             </section>
                 
                 <section id="spell-crafting">
-                    <h2>Spell Crafting System</h2>
+                    <h3>Spell Crafting System</h3>
 
-                    <h3>Mechanic Overview</h3>
-                    <p>
-                        The Spell Crafting System is a core gameplay mechanic
-                        that allows players to combine elements acquired
-                        from the environment to create spells. Rather than
-                        unlocking every spell through conventional
-                        progression, players are encouraged to experiment
-                        with elemental combinations to discover new
-                        abilities.
-                    </p>
+                    <section id="spell-overview">
+                        <h3>Mechanic Overview</h3>
+                        <p>
+                            The Spell Crafting System is a core gameplay mechanic
+                            that allows players to combine elements acquired
+                            from the environment to create spells. Rather than
+                            unlocking every spell through conventional
+                            progression, players are encouraged to experiment
+                            with elemental combinations to discover new
+                            abilities.
+                        </p>
 
-                    <p>
-                        Each spell is associated with a predefined elemental
-                        recipe. By combining the elements held in their
-                        left and right hands, players can craft spells
-                        with different combat and utility functions.
-                        These spells can then be used to overcome enemies,
-                        interact with the environment, and solve puzzles.
-                    </p>
+                        <p>
+                            Each spell is associated with a predefined elemental
+                            recipe. By combining the elements held in their
+                            left and right hands, players can craft spells
+                            with different combat and utility functions.
+                            These spells can then be used to overcome enemies,
+                            interact with the environment, and solve puzzles.
+                        </p>
+                    </section>
 
-                <section id="spell-crafting-flow">
-                    <h3>Spell Crafting Workflow</h3>
+                    <section id="spell-crafting-flow">
+                        <h3>Spell Crafting Workflow</h3>
 
-                    <p>
-                        The following diagram illustrates the process
-                        of acquiring elements, crafting a spell,
-                        and using the resulting ability.
-                    </p>
+                        <p>
+                            The following diagram illustrates the process
+                            of acquiring elements, crafting a spell,
+                            and using the resulting ability.
+                        </p>
 
-                    <section id="crafting-flow">
-                        <div class="crafting-flow">
+                        <section id="crafting-flow">
+                            <div class="crafting-flow">
 
                             <!-- Step 1: Element Acquisition -->
                             <div class="flow-step">
@@ -343,63 +345,65 @@
                         </div>
                     </section>
 
-                    <h3>Spell Behaviour</h3>
-                    <p>
-                        Once crafted, spells provide different
-                        ways for players to interact with enemies
-                        and the environment. Each spell has
-                        predefined attributes, including damage,
-                        range, size, duration, travel speed,
-                        and available uses, depending on
-                        its intended behaviour.
-                    </p>
+                    <section id="spell-behaviour">
+                        <h3>Spell Behaviour</h3>
+                        <p>
+                            Once crafted, spells provide different
+                            ways for players to interact with enemies
+                            and the environment. Each spell has
+                            predefined attributes, including damage,
+                            range, size, duration, travel speed,
+                            and available uses, depending on
+                            its intended behaviour.
+                        </p>
 
-                    <p>
-                        Spells are classified into several
-                        categories based on their gameplay
-                        functions.
-                    </p>
+                        <p>
+                            Spells are classified into several
+                            categories based on their gameplay
+                            functions.
+                        </p>
 
-                    <table id="spell">
-                        <thead>
-                            <tr>
-                                <th>Cast Type</th>
-                                <th>Gameplay Function</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Projectile</td>
-                                <td>
-                                    Launches a projectile towards
-                                    a target or direction.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Area of Effect (AoE)</td>
-                                <td>
-                                    Applies an effect within
-                                    a designated area, either
-                                    instantly or over time.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Crowd Control (CC)</td>
-                                <td>
-                                    Applies negative status effects,
-                                    such as stun or freeze,
-                                    to restrict enemy actions.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Spawn Object</td>
-                                <td>
-                                    Creates temporary objects
-                                    within the game world.
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <table id="spell">
+                            <thead>
+                                <tr>
+                                    <th>Cast Type</th>
+                                    <th>Gameplay Function</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Projectile</td>
+                                    <td>
+                                        Launches a projectile towards
+                                        a target or direction.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Area of Effect (AoE)</td>
+                                    <td>
+                                        Applies an effect within
+                                        a designated area, either
+                                        instantly or over time.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Crowd Control (CC)</td>
+                                    <td>
+                                        Applies negative status effects,
+                                        such as stun or freeze,
+                                        to restrict enemy actions.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Spawn Object</td>
+                                    <td>
+                                        Creates temporary objects
+                                        within the game world.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
 
                     <h3>Spell Casting and Targeting</h3>
                     <p>
@@ -427,24 +431,6 @@
                         Players must craft another spell
                         to replace or replenish their
                         available abilities.
-                    </p>
-
-                    <h3>Visual Feedback</h3>
-                    <p>
-                        The Spell Crafting System communicates
-                        the player's current spell through
-                        a dedicated HUD slot, displaying
-                        the spell icon and remaining uses.
-                        Crafting a new spell updates
-                        this information immediately.
-                    </p>
-
-                    <p>
-                        Individual spells also use distinctive
-                        visual effects and impact effects
-                        to communicate their behaviour,
-                        helping players recognise different
-                        abilities during combat and exploration.
                     </p>
 
                     <h3>Design Rationale</h3>
