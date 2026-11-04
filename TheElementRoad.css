@@ -277,6 +277,28 @@ p {
     background-color: #f8f8f8;
 }
 
+.spell-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.spell-table th,
+.spell-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.spell-table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.spell-table tbody tr:hover {
+    background-color: #f8f8f8;
+}
+
 /* Spell Crafting Workflow */
 
 #spell-crafting-flow {
