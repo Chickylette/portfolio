@@ -249,53 +249,387 @@ p {
   }
 }
 
-/* Roles Section */
-#role {
-    margin: 25px 0;
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 20px 0;
 }
 
-.role-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 15px;
+.terrain-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
 }
 
-.role-card {
-    background: #fff;
+.terrain-table th,
+.terrain-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.terrain-table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.terrain-table tbody tr:hover {
+    background-color: #f8f8f8;
+}
+
+.tile-color {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.road { background-color: #ffffff; }
+.grass { background-color: #4caf50; }
+.water { background-color: #2196f3; }
+.mountain { background-color: #222222; }
+
+.unit-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.unit-table th,
+.unit-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.unit-table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.unit-table tbody tr:hover {
+    background-color: #f8f8f8;
+}
+
+.unit-table td:first-child {
+    white-space: nowrap;
+}
+
+
+.rarity-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin: 15px 0 25px;
+    font-size: 0.95rem;
+}
+
+.rarity-table th,
+.rarity-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.rarity-table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.rarity-table tbody tr:hover {
+    background-color: #f8f8f8;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+} 
+
+/* =========================
+   UNIT SHOWCASE
+========================= */
+
+#unit-showcase {
+    background-color: #ffffff;
     border: 1px solid #e5e5e5;
     border-radius: 8px;
     padding: 20px;
-    transition: border-color 0.2s ease,
-                box-shadow 0.2s ease;
+    margin: 15px 0;
+    color: #333333;
+    box-sizing: border-box;
 }
 
-.role-card:hover {
-    border-color: #aaa;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+/* Section heading */
+#unit-showcase h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: #333333;
 }
 
-.role-icon {
-    font-size: 28px;
-    margin-bottom: 12px;
-}
-
-.role-card h3 {
-    font-size: 1.05rem;
-    margin: 0 0 10px;
-    color: #333;
-}
-
-.role-card p {
-    font-size: 0.9rem;
+.showcase-subtitle {
+    font-size: 0.95rem;
+    color: #666666;
+    margin: 0 0 20px;
     line-height: 1.6;
-    color: #666;
+}
+
+/* =========================
+   ROLE FILTERS
+========================= */
+
+.unit-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    background: #ffffff;
+    color: #444444;
+    border: 1px solid #cccccc;
+    border-radius: 20px;
+    padding: 7px 16px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    background: #f2f2f2;
+    border-color: #999999;
+}
+
+.filter-btn.active {
+    background: #333333;
+    color: #ffffff;
+    border-color: #333333;
+}
+
+/* =========================
+   UNIT GALLERY
+========================= */
+
+.unit-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* Unit cards */
+.unit-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    min-width: 0;
+    padding: 15px;
+
+    background: #ffffff;
+    color: #333333;
+
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.unit-card:hover {
+    border-color: #999999;
+    background: #fafafa;
+    transform: translateY(-3px);
+}
+
+.unit-card.selected {
+    border: 2px solid #555555;
+    background: #f8f8f8;
+}
+
+/* =========================
+   UNIT IMAGES
+========================= */
+
+.unit-image {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 12px;
+    overflow: hidden;
+}
+
+.unit-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.placeholder-icon {
+    font-size: 3rem;
+}
+
+/* Unit name and rarity */
+.unit-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 8px 0 4px;
+    color: #333333;
+}
+
+.unit-card p {
+    font-size: 0.85rem;
+    color: #777777;
     margin: 0;
 }
 
-/* Responsive Layout */
-@media (max-width: 768px) {
-    .role-container {
+/* =========================
+   UNIT DETAILS
+========================= */
+
+.unit-details {
+    background: #ffffff;
+    color: #333333;
+    padding: 20px 0 0;
+}
+
+.unit-details[hidden] {
+    display: none;
+}
+
+.unit-details-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.unit-details-heading h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.rarity-badge {
+    background: #eeeeee;
+    color: #444444;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+#unit-description {
+    color: #666666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   UNIT STATISTICS
+========================= */
+
+.unit-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+
+    border-top: 1px solid #dddddd;
+    padding: 20px 0;
+}
+
+.unit-stats > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.unit-stats span {
+    color: #777777;
+    font-size: 1rem;
+}
+
+.unit-stats strong {
+    color: #333333;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* =========================
+   DESIGN RATIONALE
+========================= */
+
+.unit-rationale {
+    border-top: 1px solid #dddddd;
+    padding-top: 20px;
+    margin-top: 5px;
+}
+
+.unit-rationale h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333333;
+    margin: 0 0 10px;
+}
+
+.unit-rationale p {
+    color: #666666;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+    .unit-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    #unit-showcase {
+        padding: 15px;
+    }
+
+    .unit-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .unit-card {
+        padding: 10px;
+    }
+
+    .unit-stats {
         grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .unit-filters {
+        gap: 6px;
+    }
+
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
     }
 }
