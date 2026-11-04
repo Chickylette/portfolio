@@ -134,63 +134,65 @@
                     allowing players to adapt their elemental
                     combinations without cooldown restrictions.
                 </p>
+           
+                <section id="element-acquisition-flow">
+                    <h3>Element Acquisition Flow</h3>
 
-                <h3>Element Acquisition Flow</h3>
+                    <p>
+                        The following flowchart illustrates how the
+                        Grab Element System processes player interaction,
+                        validates elemental sources, and updates
+                        the currently held elements.
+                    </p>
 
-                <p>
-                    The following flowchart illustrates how the
-                    Grab Element System processes player interaction,
-                    validates elemental sources, and updates
-                    the currently held elements.
-                </p>
+                    <div class="flowchart-container">
+                        <pre class="mermaid">
+                            flowchart TD
+                                A([Player Hovers Over Object])
+                                B{Valid Elemental Source?}
+                                C[Display Normal Cursor]
+                                D[Display Pointer Hand Cursor]
+                                E{Player Clicks?}
+                                F{Acquisition Conditions Met?}
+                                G[Acquisition Fails]
+                                H{Which Mouse Button?}
+                                I[Select Left Hand Slot]
+                                J[Select Right Hand Slot]
+                                K[Replace Existing Element]
+                                L[Store Acquired Element]
+                                M[Update HUD Element Icon]
+                                N[Play Element-Coloured Hand Effect]
+                                O([Element Ready for Crafting])
 
-                <div class="flowchart-container">
-                    <pre class="mermaid">
-                        flowchart TD
-                            A([Player Hovers Over Object])
-                            B{Valid Elemental Source?}
-                            C[Display Normal Cursor]
-                            D[Display Pointer Hand Cursor]
-                            E{Player Clicks?}
-                            F{Acquisition Conditions Met?}
-                            G[Acquisition Fails]
-                            H{Which Mouse Button?}
-                            I[Select Left Hand Slot]
-                            J[Select Right Hand Slot]
-                            K[Replace Existing Element]
-                            L[Store Acquired Element]
-                            M[Update HUD Element Icon]
-                            N[Play Element-Coloured Hand Effect]
-                            O([Element Ready for Crafting])
+                                A --> B
+                                B -- No --> C
+                                B -- Yes --> D
+                                D --> E
+                                E -- No --> D
+                                E -- Yes --> F
+                                F -- No --> G
+                                F -- Yes --> H
+                                H -- Left Click --> I
+                                H -- Right Click --> J
+                                I --> K
+                                J --> K
+                                K --> L
+                                L --> M
+                                M --> N
+                                N --> O
 
-                            A --> B
-                            B -- No --> C
-                            B -- Yes --> D
-                            D --> E
-                            E -- No --> D
-                            E -- Yes --> F
-                            F -- No --> G
-                            F -- Yes --> H
-                            H -- Left Click --> I
-                            H -- Right Click --> J
-                            I --> K
-                            J --> K
-                            K --> L
-                            L --> M
-                            M --> N
-                            N --> O
+                                classDef startEnd fill:#eee8ff,stroke:#8056e8,color:#333
+                                classDef decision fill:#fff4d6,stroke:#d4a237,color:#333
+                                classDef process fill:#f7f8fb,stroke:#aaa,color:#333
+                                classDef failure fill:#ffe8e8,stroke:#d66,color:#333
 
-                            classDef startEnd fill:#eee8ff,stroke:#8056e8,color:#333
-                            classDef decision fill:#fff4d6,stroke:#d4a237,color:#333
-                            classDef process fill:#f7f8fb,stroke:#aaa,color:#333
-                            classDef failure fill:#ffe8e8,stroke:#d66,color:#333
-
-                            class A,O startEnd
-                            class B,E,F,H decision
-                            class D,I,J,K,L,M,N process
-                            class C,G failure
-                    </pre>
-                </div>
+                                class A,O startEnd
+                                class B,E,F,H decision
+                                class D,I,J,K,L,M,N process
+                                class C,G failure
+                        </pre>
+                    </div>
+                </section>
 
                 <h3>Design Rationale</h3>
                 <p>
