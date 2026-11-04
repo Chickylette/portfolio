@@ -45,7 +45,184 @@
 
         <section id="mechanics">
             <h3>Core Mechanics</h3>
-            
+
+            <section id="grab-element">
+                <h2>Grab Element System</h2>
+
+                <h3>Mechanic Overview</h3>
+                <p>
+                    The Grab Element System is a core gameplay mechanic
+                    that allows players to extract elemental properties
+                    from naturally occurring objects in the environment.
+                    These elements serve as the foundation for spell
+                    crafting and certain item crafting interactions.
+                </p>
+
+                <p>
+                    Players can hold up to two active elements,
+                    one in each hand. By acquiring different elements
+                    from their surroundings, players can experiment
+                    with elemental combinations to create spells
+                    and overcome challenges during exploration,
+                    puzzle-solving, and combat.
+                </p>
+
+                <h3>Element Sources</h3>
+                <p>
+                    Each element is associated with specific
+                    environmental sources. Players must identify
+                    and interact with these sources to acquire
+                    the elements required for crafting.
+                </p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>Example Sources</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Earth</td>
+                            <td>Stones, Natural Pathways</td>
+                        </tr>
+                        <tr>
+                            <td>Water</td>
+                            <td>Ponds, Rivers, Lakes</td>
+                        </tr>
+                        <tr>
+                            <td>Wind</td>
+                            <td>Wind Chimes, Strong Wind on Bridges</td>
+                        </tr>
+                        <tr>
+                            <td>Wood</td>
+                            <td>Trees</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    To maintain consistency within the game's
+                    elemental system, only pure, naturally occurring
+                    materials can serve as elemental sources.
+                    For example, players can extract Wood from
+                    a living tree, but not from processed wooden
+                    planks or furniture.
+                </p>
+
+                <h3>Player Interaction</h3>
+                <p>
+                    When the player hovers their cursor over a valid
+                    elemental source, the cursor changes into a
+                    pointing hand to indicate that the object
+                    is interactable.
+                </p>
+
+                <p>
+                    Left-clicking acquires the element into the
+                    player's left hand, while right-clicking
+                    assigns it to the right hand. The corresponding
+                    HUD element slot updates immediately to
+                    display the newly acquired element.
+                </p>
+
+                <p>
+                    Each hand can hold only one active element.
+                    Acquiring another element automatically
+                    replaces the previously held element,
+                    allowing players to adapt their elemental
+                    combinations without cooldown restrictions.
+                </p>
+
+                <h3>Element Acquisition Flow</h3>
+
+                <p>
+                    The following flowchart illustrates how the
+                    Grab Element System processes player interaction,
+                    validates elemental sources, and updates
+                    the currently held elements.
+                </p>
+
+                <div class="flowchart-container">
+                    <pre class="mermaid">
+                        flowchart TD
+                            A([Player Hovers Over Object])
+                            B{Valid Elemental Source?}
+                            C[Display Normal Cursor]
+                            D[Display Pointer Hand Cursor]
+                            E{Player Clicks?}
+                            F{Acquisition Conditions Met?}
+                            G[Acquisition Fails]
+                            H{Which Mouse Button?}
+                            I[Select Left Hand Slot]
+                            J[Select Right Hand Slot]
+                            K[Replace Existing Element]
+                            L[Store Acquired Element]
+                            M[Update HUD Element Icon]
+                            N[Play Element-Coloured Hand Effect]
+                            O([Element Ready for Crafting])
+
+                            A --> B
+                            B -- No --> C
+                            B -- Yes --> D
+                            D --> E
+                            E -- No --> D
+                            E -- Yes --> F
+                            F -- No --> G
+                            F -- Yes --> H
+                            H -- Left Click --> I
+                            H -- Right Click --> J
+                            I --> K
+                            J --> K
+                            K --> L
+                            L --> M
+                            M --> N
+                            N --> O
+
+                            classDef startEnd fill:#eee8ff,stroke:#8056e8,color:#333
+                            classDef decision fill:#fff4d6,stroke:#d4a237,color:#333
+                            classDef process fill:#f7f8fb,stroke:#aaa,color:#333
+                            classDef failure fill:#ffe8e8,stroke:#d66,color:#333
+
+                            class A,O startEnd
+                            class B,E,F,H decision
+                            class D,I,J,K,L,M,N process
+                            class C,G failure
+                    </pre>
+                </div>
+
+                <h3>Design Rationale</h3>
+                <p>
+                    The Grab Element System was designed to make
+                    environmental interaction a fundamental part
+                    of gameplay rather than a secondary activity.
+                    By requiring players to obtain elements from
+                    their surroundings, the system encourages
+                    exploration, environmental awareness, and
+                    strategic decision-making.
+                </p>
+
+                <p>
+                    Limiting players to one element per hand
+                    introduces a deliberate constraint on
+                    resource management. Players must consider
+                    which elements to retain and when to
+                    replace them, particularly when preparing
+                    for combat or solving environmental puzzles.
+                </p>
+
+                <p>
+                    Allowing elements to be replaced instantly
+                    prevents the system from becoming overly
+                    restrictive, supporting experimentation
+                    with different combinations. Together with
+                    clear visual feedback, these decisions aim
+                    to create an intuitive mechanic that
+                    connects exploration, spell crafting,
+                    and combat into a cohesive gameplay loop.
+                </p>
+            </section>
         </section>
     </section>
 </body>
