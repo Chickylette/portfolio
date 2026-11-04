@@ -276,3 +276,143 @@ p {
 .element-table tbody tr:hover {
     background-color: #f8f8f8;
 }
+
+/* Spell Crafting Workflow */
+
+#spell-crafting-flow {
+    margin: 30px 0;
+}
+
+.crafting-flow {
+    max-width: 700px;
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Main Workflow Cards */
+
+.flow-step {
+    position: relative;
+    width: 100%;
+    padding: 22px 25px;
+    background: #f8f9fb;
+    border: 1px solid #e3e5e8;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.flow-step h4 {
+    margin: 5px 0 8px;
+    font-size: 1.05rem;
+    color: #333;
+}
+
+.flow-step p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Step Number */
+
+.flow-number {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #eaecef;
+    color: #555;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* Connecting Arrows */
+
+.flow-arrow {
+    font-size: 26px;
+    line-height: 1;
+    color: #999;
+    padding: 12px 0;
+}
+
+/* Element Cards */
+
+.element-pair {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.element-card {
+    flex: 1;
+    min-width: 0;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.element-icon {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.element-card h4 {
+    margin: 0 0 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.element-card p {
+    margin: 0;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.element-combine {
+    font-size: 28px;
+    font-weight: 600;
+    color: #999;
+}
+
+/* Crafted Spell */
+
+.crafted-spell {
+    background: #f5f2ff;
+    border-color: #d9cef7;
+}
+
+.spell-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+/* Responsive Layout */
+
+@media (max-width: 600px) {
+    .crafting-flow {
+        width: 100%;
+    }
+
+    .flow-step {
+        padding: 18px 15px;
+    }
+
+    .element-pair {
+        gap: 10px;
+    }
+
+    .element-card {
+        padding: 15px 8px;
+    }
+
+    .element-combine {
+        font-size: 20px;
+    }
+}
