@@ -235,276 +235,268 @@
                     </p>
                 </section>
             </section>
+                
+                <section id="spell-crafting">
+                    <h2>Spell Crafting System</h2>
 
-            <section id="spell-crafting">
-                <h3>Spell Crafting System</h3>
+                    <h3>Mechanic Overview</h3>
+                    <p>
+                        The Spell Crafting System is a core gameplay mechanic
+                        that allows players to combine elements acquired
+                        from the environment to create spells. Rather than
+                        unlocking every spell through conventional
+                        progression, players are encouraged to experiment
+                        with elemental combinations to discover new
+                        abilities.
+                    </p>
 
-                <h3>Mechanic Overview</h3>
-                <p>
-                    The Spell Crafting System is a core gameplay mechanic
-                    that allows players to combine elements acquired
-                    from the environment to create spells. Rather than
-                    unlocking every spell through conventional
-                    progression, players are encouraged to experiment
-                    with elemental combinations to discover new
-                    abilities.
-                </p>
+                    <p>
+                        Each spell is associated with a predefined elemental
+                        recipe. By combining the elements held in their
+                        left and right hands, players can craft spells
+                        with different combat and utility functions.
+                        These spells can then be used to overcome enemies,
+                        interact with the environment, and solve puzzles.
+                    </p>
 
-                <p>
-                    Each spell is associated with a predefined elemental
-                    recipe. By combining the elements held in their
-                    left and right hands, players can craft spells
-                    with different combat and utility functions.
-                    These spells can then be used to overcome enemies,
-                    interact with the environment, and solve puzzles.
-                </p>
+                <section id="spell-crafting-flow">
+                    <h3>Spell Crafting Workflow</h3>
 
-                <h3>Player Interaction</h3>
-                <p>
-                    Spell crafting is directly connected to the
-                    Grab Element System. Players must first acquire
-                    two elements from environmental sources before
-                    attempting to craft a spell.
-                </p>
+                    <p>
+                        The following diagram illustrates the process
+                        of acquiring elements, crafting a spell,
+                        and using the resulting ability.
+                    </p>
 
-                <ol>
-                    <li>
-                        Acquire elements from the environment
-                        using the Grab Element System.
-                    </li>
-                    <li>
-                        Assign the desired elements to the
-                        left and right hands.
-                    </li>
-                    <li>
-                        Press <strong>F</strong> to attempt
-                        spell crafting.
-                    </li>
-                    <li>
-                        The system checks whether the selected
-                        combination matches a valid spell recipe.
-                    </li>
-                    <li>
-                        If a valid recipe is found, both elements
-                        are consumed and the corresponding spell
-                        is crafted.
-                    </li>
-                    <li>
-                        The crafted spell is assigned to the
-                        spell slot, updating its icon and
-                        available number of uses.
-                    </li>
-                </ol>
+                    <section id="crafting-flow">
+                        <div class="crafting-flow">
 
-                <p>
-                    If no valid recipe exists, the crafting
-                    attempt fails without consuming the
-                    currently held elements. This allows
-                    players to experiment with different
-                    combinations without losing resources
-                    through unsuccessful attempts.
-                </p>
+                            <!-- Step 1: Element Acquisition -->
+                            <div class="flow-step">
+                                <span class="flow-number">01</span>
+                                <h4>Element Acquisition</h4>
+                                <p>
+                                    Collect elements from environmental sources.
+                                </p>
+                            </div>
 
-                <h3>Element Combinations</h3>
-                <p>
-                    The system uses predefined recipes to
-                    determine the resulting spell. Each recipe
-                    specifies the required elements and
-                    the corresponding spell to be created.
-                </p>
+                            <div class="flow-arrow">↓</div>
 
-                <p>
-                    Element order can influence the crafting
-                    outcome. For example, combining Wood
-                    in the left hand with Water in the right
-                    hand may produce a different spell from
-                    combining Water with Wood.
-                </p>
+                            <!-- Two Element Slots -->
+                            <div class="element-pair">
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Left Hand</th>
-                            <th>Right Hand</th>
-                            <th>Result</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Wood</td>
-                            <td>Water</td>
-                            <td>Spell A</td>
-                        </tr>
-                        <tr>
-                            <td>Water</td>
-                            <td>Wood</td>
-                            <td>Spell B</td>
-                        </tr>
-                    </tbody>
-                </table>
+                                <div class="element-card">
+                                    <div class="element-icon">🌳</div>
+                                    <h4>Left Hand</h4>
+                                    <p>Wood</p>
+                                </div>
 
-                <p>
-                    <em>
-                        The combinations above illustrate
-                        the order-dependent recipe system.
-                        Some recipes may produce the same
-                        spell regardless of element order.
-                    </em>
-                </p>
+                                <div class="element-combine">+</div>
 
-                <h3>Spell Behaviour</h3>
-                <p>
-                    Once crafted, spells provide different
-                    ways for players to interact with enemies
-                    and the environment. Each spell has
-                    predefined attributes, including damage,
-                    range, size, duration, travel speed,
-                    and available uses, depending on
-                    its intended behaviour.
-                </p>
+                                <div class="element-card">
+                                    <div class="element-icon">💧</div>
+                                    <h4>Right Hand</h4>
+                                    <p>Water</p>
+                                </div>
 
-                <p>
-                    Spells are classified into several
-                    categories based on their gameplay
-                    functions.
-                </p>
+                            </div>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Cast Type</th>
-                            <th>Gameplay Function</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Projectile</td>
-                            <td>
-                                Launches a projectile towards
-                                a target or direction.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Area of Effect (AoE)</td>
-                            <td>
-                                Applies an effect within
-                                a designated area, either
-                                instantly or over time.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Crowd Control (CC)</td>
-                            <td>
-                                Applies negative status effects,
-                                such as stun or freeze,
-                                to restrict enemy actions.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Spawn Object</td>
-                            <td>
-                                Creates temporary objects
-                                within the game world.
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                            <div class="flow-arrow">↓</div>
 
-                <h3>Spell Casting and Targeting</h3>
-                <p>
-                    Players can cast their currently equipped
-                    spell by pressing <strong>R</strong>.
-                    Before casting, the system validates
-                    the spell's remaining uses and
-                    targeting requirements.
-                </p>
+                            <!-- Step 2: Spell Crafting -->
+                            <div class="flow-step">
+                                <span class="flow-number">02</span>
+                                <h4>Spell Crafting</h4>
+                                <p>
+                                    Press <strong>F</strong> to combine
+                                    the elements and validate the recipe.
+                                </p>
+                            </div>
 
-                <p>
-                    Different spells use different targeting
-                    methods. Some spells can be directed
-                    freely using the cursor, while others
-                    require a valid ground location or
-                    a specific target actor.
-                </p>
+                            <div class="flow-arrow">↓</div>
 
-                <p>
-                    Upon successful casting, the spell
-                    executes its predefined behaviour
-                    and consumes one use. Once all
-                    available uses have been depleted,
-                    the spell can no longer be cast.
-                    Players must craft another spell
-                    to replace or replenish their
-                    available abilities.
-                </p>
+                            <!-- Step 3: Crafted Spell -->
+                            <div class="flow-step crafted-spell">
+                                <span class="flow-number">03</span>
+                                <div class="spell-icon">✨</div>
+                                <h4>Crafted Spell</h4>
+                                <p>
+                                    The resulting spell is assigned
+                                    to the spell slot with its
+                                    available number of uses.
+                                </p>
+                            </div>
 
-                <h3>Visual Feedback</h3>
-                <p>
-                    The Spell Crafting System communicates
-                    the player's current spell through
-                    a dedicated HUD slot, displaying
-                    the spell icon and remaining uses.
-                    Crafting a new spell updates
-                    this information immediately.
-                </p>
+                            <div class="flow-arrow">↓</div>
 
-                <p>
-                    Individual spells also use distinctive
-                    visual effects and impact effects
-                    to communicate their behaviour,
-                    helping players recognise different
-                    abilities during combat and exploration.
-                </p>
+                            <!-- Step 4: Spell Casting -->
+                            <div class="flow-step">
+                                <span class="flow-number">04</span>
+                                <h4>Spell Casting</h4>
+                                <p>
+                                    Press <strong>R</strong> to validate
+                                    the target and cast the spell.
+                                    One use is consumed after
+                                    a successful cast.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
 
-                <h3>Design Rationale</h3>
-                <p>
-                    The Spell Crafting System was designed
-                    to establish a direct relationship
-                    between environmental exploration,
-                    player experimentation, and combat
-                    progression. Rather than providing
-                    players with a fixed collection
-                    of abilities, the system encourages
-                    them to discover spells by interacting
-                    with the game world and experimenting
-                    with elemental combinations.
-                </p>
+                    <h3>Spell Behaviour</h3>
+                    <p>
+                        Once crafted, spells provide different
+                        ways for players to interact with enemies
+                        and the environment. Each spell has
+                        predefined attributes, including damage,
+                        range, size, duration, travel speed,
+                        and available uses, depending on
+                        its intended behaviour.
+                    </p>
 
-                <p>
-                    The decision to support order-dependent
-                    recipes increases the number of
-                    possible outcomes from a limited
-                    selection of elements. This introduces
-                    additional depth to the crafting
-                    system and rewards players who
-                    experiment with different arrangements.
-                </p>
+                    <p>
+                        Spells are classified into several
+                        categories based on their gameplay
+                        functions.
+                    </p>
 
-                <p>
-                    Limiting each crafted spell to a
-                    predefined number of uses encourages
-                    players to consider when and where
-                    to use their abilities. Combined
-                    with the two-element carrying
-                    restriction, this creates meaningful
-                    decisions around elemental selection,
-                    spell preparation, and resource
-                    management.
-                </p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cast Type</th>
+                                <th>Gameplay Function</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Projectile</td>
+                                <td>
+                                    Launches a projectile towards
+                                    a target or direction.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Area of Effect (AoE)</td>
+                                <td>
+                                    Applies an effect within
+                                    a designated area, either
+                                    instantly or over time.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Crowd Control (CC)</td>
+                                <td>
+                                    Applies negative status effects,
+                                    such as stun or freeze,
+                                    to restrict enemy actions.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Spawn Object</td>
+                                <td>
+                                    Creates temporary objects
+                                    within the game world.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                <p>
-                    By supporting multiple spell categories
-                    and targeting methods, the system
-                    also allows players to approach
-                    encounters in different ways.
-                    The overall design aims to create
-                    a flexible gameplay experience
-                    in which experimentation and
-                    environmental awareness are
-                    essential to player progression.
-                </p>
+                    <h3>Spell Casting and Targeting</h3>
+                    <p>
+                        Players can cast their currently equipped
+                        spell by pressing <strong>R</strong>.
+                        Before casting, the system validates
+                        the spell's remaining uses and
+                        targeting requirements.
+                    </p>
+
+                    <p>
+                        Different spells use different targeting
+                        methods. Some spells can be directed
+                        freely using the cursor, while others
+                        require a valid ground location or
+                        a specific target actor.
+                    </p>
+
+                    <p>
+                        Upon successful casting, the spell
+                        executes its predefined behaviour
+                        and consumes one use. Once all
+                        available uses have been depleted,
+                        the spell can no longer be cast.
+                        Players must craft another spell
+                        to replace or replenish their
+                        available abilities.
+                    </p>
+
+                    <h3>Visual Feedback</h3>
+                    <p>
+                        The Spell Crafting System communicates
+                        the player's current spell through
+                        a dedicated HUD slot, displaying
+                        the spell icon and remaining uses.
+                        Crafting a new spell updates
+                        this information immediately.
+                    </p>
+
+                    <p>
+                        Individual spells also use distinctive
+                        visual effects and impact effects
+                        to communicate their behaviour,
+                        helping players recognise different
+                        abilities during combat and exploration.
+                    </p>
+
+                    <h3>Design Rationale</h3>
+                    <p>
+                        The Spell Crafting System was designed
+                        to establish a direct relationship
+                        between environmental exploration,
+                        player experimentation, and combat
+                        progression. Rather than providing
+                        players with a fixed collection
+                        of abilities, the system encourages
+                        them to discover spells by interacting
+                        with the game world and experimenting
+                        with elemental combinations.
+                    </p>
+
+                    <p>
+                        The decision to support order-dependent
+                        recipes increases the number of
+                        possible outcomes from a limited
+                        selection of elements. This introduces
+                        additional depth to the crafting
+                        system and rewards players who
+                        experiment with different arrangements.
+                    </p>
+
+                    <p>
+                        Limiting each crafted spell to a
+                        predefined number of uses encourages
+                        players to consider when and where
+                        to use their abilities. Combined
+                        with the two-element carrying
+                        restriction, this creates meaningful
+                        decisions around elemental selection,
+                        spell preparation, and resource
+                        management.
+                    </p>
+
+                    <p>
+                        By supporting multiple spell categories
+                        and targeting methods, the system
+                        also allows players to approach
+                        encounters in different ways.
+                        The overall design aims to create
+                        a flexible gameplay experience
+                        in which experimentation and
+                        environmental awareness are
+                        essential to player progression.
+                    </p>
+                </section>
+
             </section>
-
         </section>
 
         <section id="combat">
