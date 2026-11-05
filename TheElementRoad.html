@@ -487,6 +487,579 @@
                 </section>
             </section>
         </section>
+                
+        <section id="combat">
+
+            <h3>Combat</h3>
+
+            <!-- Overview -->
+            <section id="combat-overview">
+                <h3>Mechanic Overview</h3>
+
+                <p>
+                    Combat in The Element Road is built around
+                    elemental spellcasting, encouraging players
+                    to adapt their abilities to different enemy
+                    behaviours and combat situations.
+                    Rather than relying on a fixed set of attacks,
+                    players acquire elements from their surroundings
+                    and combine them to craft spells with different
+                    offensive and utility functions.
+                </p>
+
+                <p>
+                    Enemies are controlled through an AI State Tree
+                    that manages their movement, target selection,
+                    attack execution, and reactions to player
+                    actions. Each enemy has its own attributes
+                    and attack patterns, requiring players to
+                    consider positioning, timing, and spell
+                    selection during encounters.
+                </p>
+            </section>
+
+            <!-- Combat Loop -->
+            <section id="combat-loop">
+                <h3>Combat Gameplay Loop</h3>
+
+                <p>
+                    The combat system integrates environmental
+                    interaction, spell crafting, and enemy
+                    encounters into a continuous gameplay loop.
+                </p>
+
+                <ol>
+                    <li>
+                        Identify an enemy and observe its
+                        behaviour and attack patterns.
+                    </li>
+
+                    <li>
+                        Acquire elements from nearby
+                        environmental sources.
+                    </li>
+
+                    <li>
+                        Combine the acquired elements to
+                        craft an appropriate spell.
+                    </li>
+
+                    <li>
+                        Position the player and select
+                        a valid target or casting location.
+                    </li>
+
+                    <li>
+                        Cast spells to damage enemies,
+                        apply status effects, or influence
+                        the combat environment.
+                    </li>
+
+                    <li>
+                        React to enemy attacks through
+                        movement, repositioning, and
+                        spell selection.
+                    </li>
+
+                    <li>
+                        Defeat the enemy and progress
+                        applicable quest objectives.
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Spell Combat -->
+            <section id="combat-spells">
+                <h3>Elemental Spell Combat</h3>
+
+                <p>
+                    Spells serve as the player's primary
+                    combat abilities. Each spell has
+                    predefined attributes that determine
+                    its behaviour, including damage,
+                    range, duration, size, and
+                    available uses.
+                </p>
+
+                <p>
+                    Different spell categories provide
+                    different tactical options.
+                    Projectile spells allow players
+                    to attack targets from a distance,
+                    while Area-of-Effect spells can
+                    influence multiple enemies within
+                    a designated area.
+                </p>
+
+                <p>
+                    Crowd Control spells can restrict
+                    enemy actions through effects such
+                    as Root, Stun, or Slow. Other spells
+                    can create temporary objects
+                    within the environment, providing
+                    additional possibilities for
+                    combat interactions.
+                </p>
+
+                <p>
+                    As crafted spells have a limited
+                    number of uses, players must
+                    consider when to cast their
+                    available abilities and when
+                    to acquire new elements to
+                    craft replacement spells.
+                </p>
+            </section>
+
+            <!-- Enemy AI -->
+            <section id="combat-enemy-ai">
+                <h3>Enemy AI Behaviour</h3>
+
+                <p>
+                    Enemy behaviour is managed through
+                    Unreal Engine's AI State Tree.
+                    The system evaluates the current
+                    combat situation and determines
+                    the enemy's next action based on
+                    target availability, attack range,
+                    cooldowns, and other conditions.
+                </p>
+
+                <p>
+                    When a valid target enters an
+                    enemy's detection range, the
+                    enemy selects a target and
+                    evaluates its available attacks.
+                    If the target is outside the
+                    required attack range, the enemy
+                    attempts to approach using
+                    AI navigation.
+                </p>
+
+                <p>
+                    Once the target is within range,
+                    the enemy executes its selected
+                    attack. After completing the
+                    action, the AI re-evaluates
+                    the combat situation and
+                    determines its next behaviour.
+                </p>
+
+                <p>
+                    By default, enemies prioritise
+                    the nearest valid target.
+                    Targets can include the player,
+                    allied summoned actors, and
+                    other designated combat entities.
+                    This allows enemies to respond
+                    to different actors rather
+                    than exclusively targeting
+                    the player character.
+                </p>
+                
+                <div class="flowchart-container">
+                    <pre class="mermaid">
+                        flowchart TD
+                            A([Idle])
+                            B{Valid Target Detected?}
+                            C[Select Target]
+                            D[Evaluate Available Attacks]
+                            E{Attack Available?}
+                            F{Target Within Attack Range?}
+                            G[Chase Target]
+                            H[Execute Attack]
+                            I[Apply Damage and Effects]
+                            J[Attack Cooldown]
+                            K{Target Still Valid?}
+                            L[Return to Origin]
+                            M[Re-evaluate Combat]
+
+                            A --> B
+                            B -- No --> A
+                            B -- Yes --> C
+                            C --> D
+                            D --> E
+                            E -- No --> M
+                            E -- Yes --> F
+                            F -- No --> G
+                            G --> M
+                            F -- Yes --> H
+                            H --> I
+                            I --> J
+                            J --> K
+                            K -- Yes --> M
+                            K -- No --> L
+                            M --> D
+                            L --> A
+                    </pre>
+                </div>
+
+            </section>
+
+            <!-- Attack Selection -->
+            <section id="combat-attack-selection">
+                <h3>Enemy Attack Selection</h3>
+
+                <p>
+                    Enemies may possess multiple attacks
+                    with different ranges, damage values,
+                    cooldowns, and execution conditions.
+                    The AI selects an available attack
+                    based on predefined priorities
+                    or weighted probabilities.
+                </p>
+
+                <p>
+                    For example, an enemy may use
+                    a weighted attack selection system
+                    that favours normal attacks while
+                    occasionally performing a more
+                    powerful special attack.
+                </p>
+
+                <table class="spell-table">
+                    <thead>
+                        <tr>
+                            <th>Attack Type</th>
+                            <th>Selection Weight</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Normal Attack</td>
+                            <td>75%</td>
+                            <td>
+                                Provides consistent
+                                offensive pressure.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Special Attack</td>
+                            <td>25%</td>
+                            <td>
+                                Introduces additional
+                                attack patterns and
+                                combat challenges.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    Attack availability is validated
+                    before selection. Attacks that
+                    are on cooldown or fail their
+                    execution requirements are
+                    excluded from consideration.
+                </p>
+            </section>
+
+            <!-- Attack Execution -->
+            <section id="combat-attack-execution">
+                <h3>Attack Execution and Hit Detection</h3>
+
+                <p>
+                    Enemy attacks are synchronised
+                    with their corresponding animations
+                    to ensure that damage is applied
+                    at the appropriate moment.
+                </p>
+
+                <p>
+                    Animation Notifies are used
+                    to control when an attack's
+                    hit detection becomes active
+                    and when it is disabled.
+                    This prevents attacks from
+                    applying damage outside their
+                    intended animation windows.
+                </p>
+
+                <p>
+                    During an attack, the system
+                    detects valid targets within
+                    the designated hit area and
+                    applies the corresponding
+                    damage and additional effects.
+                    Once the attack finishes,
+                    the AI returns to behaviour
+                    evaluation.
+                </p>
+            </section>
+
+            <!-- Status Effects -->
+            <section id="combat-status-effects">
+                <h3>Status Effects and Crowd Control</h3>
+
+                <p>
+                    Spells can apply status effects
+                    that temporarily modify enemy
+                    behaviour. These effects
+                    provide additional tactical
+                    options beyond direct damage,
+                    allowing players to interrupt,
+                    restrict, or reposition enemies.
+                </p>
+
+                <table class="spell-table">
+                    <thead>
+                        <tr>
+                            <th>Status Effect</th>
+                            <th>Gameplay Impact</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Root</td>
+                            <td>
+                                Prevents movement
+                                for a specified duration.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Stun</td>
+                            <td>
+                                Temporarily prevents
+                                the target from acting.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Slow</td>
+                            <td>
+                                Reduces the target's
+                                movement speed.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Damage over Time</td>
+                            <td>
+                                Applies damage
+                                periodically.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Knockback</td>
+                            <td>
+                                Displaces the target
+                                from its current position.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    Status effects have defined
+                    durations and modify the
+                    enemy's existing behaviour.
+                    When an effect expires,
+                    the affected behaviour
+                    returns to its normal state.
+                </p>
+            </section>
+
+            <!-- Enemy Variants -->
+            <section id="combat-enemy-variants">
+                <h3>Enemy Variants and Encounter Design</h3>
+
+                <p>
+                    The Enemy System supports
+                    different enemy variants
+                    through a shared framework
+                    for movement, targeting,
+                    damage handling, and
+                    combat behaviour.
+                </p>
+
+                <p>
+                    The Forest Level features
+                    four designed Slime variants:
+                    Small Earth Slime,
+                    Small Wood Slime,
+                    King Slime, and Queen Slime.
+                    These enemies share common
+                    mechanics while differing
+                    in attributes and attack
+                    patterns.
+                </p>
+
+                <table class="spell-table">
+                    <thead>
+                        <tr>
+                            <th>Enemy</th>
+                            <th>Normal Attack</th>
+                            <th>Special Attack</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Small Earth Slime</td>
+                            <td>Single melee punch</td>
+                            <td>
+                                Leaping attack followed
+                                by a backflip.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Small Wood Slime</td>
+                            <td>Single melee punch</td>
+                            <td>
+                                Leaping attack followed
+                                by a backflip.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>King Slime</td>
+                            <td>
+                                Three consecutive
+                                melee attacks.
+                            </td>
+                            <td>
+                                Charged area-of-effect
+                                explosion.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Queen Slime</td>
+                            <td>
+                                Three consecutive
+                                melee attacks.
+                            </td>
+                            <td>
+                                Charged area-of-effect
+                                explosion.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    The larger Slime variants
+                    introduce more demanding
+                    attack patterns. Their
+                    special attack involves
+                    charging an explosion
+                    centred on the enemy,
+                    requiring players to
+                    recognise the warning
+                    and move outside
+                    the affected area.
+                </p>
+
+                <p>
+                    A short recovery period
+                    follows the explosion,
+                    creating an opportunity
+                    for players to counterattack.
+                    This introduces a clear
+                    relationship between
+                    attack recognition,
+                    defensive movement,
+                    and offensive timing.
+                </p>
+            </section>
+
+            <!-- Feedback -->
+            <section id="combat-feedback">
+                <h3>Combat Feedback</h3>
+
+                <p>
+                    Visual and audio feedback
+                    are used to communicate
+                    successful attacks,
+                    damage reception,
+                    and changes in enemy state.
+                </p>
+
+                <p>
+                    Enemies may react to
+                    incoming damage through
+                    hit reactions that temporarily
+                    interrupt their current actions.
+                    Attack animations, hit detection,
+                    and visual effects are
+                    coordinated to communicate
+                    the timing and impact
+                    of combat interactions.
+                </p>
+            </section>
+
+            <!-- Design Rationale -->
+            <section id="combat-rationale">
+                <h3>Design Rationale</h3>
+
+                <p>
+                    The Combat System was designed
+                    to encourage players to adapt
+                    their strategies according
+                    to enemy behaviour and the
+                    elemental resources available
+                    in their surroundings.
+                    By connecting spell crafting
+                    with combat, players must
+                    consider both the abilities
+                    they prepare and the situations
+                    in which they use them.
+                </p>
+
+                <p>
+                    The use of an AI State Tree
+                    provides a structured approach
+                    to enemy behaviour, allowing
+                    enemies to respond dynamically
+                    to target movement, attack
+                    availability, and changes
+                    in combat conditions.
+                    A shared enemy framework
+                    also supports the creation
+                    of additional enemy variants
+                    without redesigning the
+                    entire combat system.
+                </p>
+
+                <p>
+                    Enemy attacks were designed
+                    around recognisable animation
+                    sequences and distinct
+                    execution windows.
+                    In particular, the charged
+                    explosion used by larger
+                    Slime enemies incorporates
+                    a visible warning and
+                    recovery period, rewarding
+                    players who recognise
+                    attack patterns and respond
+                    with appropriate positioning.
+                </p>
+
+                <p>
+                    Crowd Control effects
+                    introduce additional
+                    tactical depth by allowing
+                    players to influence enemy
+                    movement and actions.
+                    Together, these mechanics
+                    aim to create a combat
+                    experience that rewards
+                    experimentation, observation,
+                    and decision-making rather
+                    than relying exclusively
+                    on damage output.
+                </p>
+            </section>
+
+        </section>
 
         <section id="itch">
             <h3>Itch.io Page</h3>
